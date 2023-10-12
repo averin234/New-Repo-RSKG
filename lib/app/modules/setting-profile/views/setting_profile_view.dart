@@ -3,13 +3,14 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:rskgcare/app/data/componen/data_regist_model.dart';
-import 'package:rskgcare/app/data/componen/fetch_data.dart';
+import 'package:rskgcare/app/widgets/endpoint/fetch_data.dart';
 import 'package:rskgcare/app/data/componen/images.dart';
 import 'package:rskgcare/app/data/componen/local_storage.dart';
 import 'package:rskgcare/app/data/componen/publics.dart';
-
-import '../../../data/componen/my_font_size.dart';
 import '../../../routes/app_pages.dart';
+import '../../../widgets/color/custom_color.dart';
+import '../../../widgets/font_size/my_font_size.dart';
+import '../../../widgets/text/string_text.dart';
 import '../controllers/setting_profile_controller.dart';
 
 class SettingProfileView extends GetView<SettingProfileController> {
@@ -18,19 +19,19 @@ class SettingProfileView extends GetView<SettingProfileController> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Theme.of(context).brightness == Brightness.light
-          ? Color(0xfff6f9fe)
-          : Color(0xff2C3333),
+          ? CustomColors.background
+          : CustomColors.darkmode1,
       appBar: AppBar(
         backgroundColor: Theme.of(context).brightness == Brightness.light
-            ? Colors.white
-            : Color(0xff2C3333),
+            ? CustomColors.warnaputih
+            : CustomColors.darkmode1,
         elevation: 0,
         leading: IconButton(
           onPressed: () {
             Get.back();
           },
           iconSize: 40,
-          color: Colors.blue,
+          color: CustomColors.warnabiru,
           icon: const Icon(Icons.arrow_circle_left_rounded),
         ),
         title: Text(
@@ -48,8 +49,8 @@ class SettingProfileView extends GetView<SettingProfileController> {
               padding: const EdgeInsets.all(10),
               decoration: BoxDecoration(
                 color: Theme.of(context).brightness == Brightness.light
-                    ? Colors.white
-                    : Color(0xff404258),
+                    ? CustomColors.warnaputih
+                    : CustomColors.darkmode2,
                 borderRadius: BorderRadius.circular(10),
               ),
               child: Column(
@@ -173,8 +174,8 @@ class SettingProfileView extends GetView<SettingProfileController> {
               padding: const EdgeInsets.all(10),
               decoration: BoxDecoration(
                 color: Theme.of(context).brightness == Brightness.light
-                    ? Colors.white
-                    : Color(0xff404258),
+                    ? CustomColors.warnaputih
+                    : CustomColors.darkmode2,
                 borderRadius: BorderRadius.circular(10),
               ),
               child: Column(
@@ -296,7 +297,7 @@ class SettingProfileView extends GetView<SettingProfileController> {
                 margin: const EdgeInsets.only(left: 10, right: 10),
                 padding: const EdgeInsets.all(10),
                 decoration: BoxDecoration(
-                  color: Colors.redAccent,
+                  color: CustomColors.warnamerah,
                   borderRadius: BorderRadius.circular(10),
                   boxShadow: [
                     BoxShadow(
@@ -315,13 +316,13 @@ class SettingProfileView extends GetView<SettingProfileController> {
                         'Keluar',
                         style: TextStyle(
                           fontWeight: FontWeight.w500,
-                          color: Colors.white,
+                          color: CustomColors.warnaputih,
                         ),
                       ),
                       Icon(
                         Icons.arrow_forward_ios,
                         size: 20,
-                        color: Colors.white,
+                        color: CustomColors.warnaputih,
                       ),
                     ],
                   ),
@@ -372,7 +373,7 @@ class SettingProfileView extends GetView<SettingProfileController> {
                         children: [
                           Text('Aplikasi masih pada tahap pengembangan'),
                           Text('mohon maaf atas ketidak nyamanan '),
-                          Text('saat menggunakan aplikasi RSKG Habibi Ainun'),
+                          Text('saat menggunakan aplikasi ${CustomStringText().namaRS}'),
                         ],
                       )),
                     ),
@@ -443,7 +444,7 @@ class SettingProfileView extends GetView<SettingProfileController> {
                               fillColor: Theme.of(context).brightness ==
                                       Brightness.light
                                   ? Color(0xffecf8ff)
-                                  : Color(0xff404258),
+                                  : CustomColors.darkmode2,
                               filled: true),
                         )
                       ],
@@ -485,7 +486,7 @@ class SettingProfileView extends GetView<SettingProfileController> {
                               fillColor: Theme.of(context).brightness ==
                                       Brightness.light
                                   ? Color(0xffecf8ff)
-                                  : Color(0xff404258),
+                                  : CustomColors.darkmode2,
                               filled: true),
                         )
                       ],
@@ -527,7 +528,7 @@ class SettingProfileView extends GetView<SettingProfileController> {
                               fillColor: Theme.of(context).brightness ==
                                       Brightness.light
                                   ? Color(0xffecf8ff)
-                                  : Color(0xff404258),
+                                  : CustomColors.darkmode2,
                               filled: true),
                         )
                       ],
@@ -592,7 +593,7 @@ class SettingProfileView extends GetView<SettingProfileController> {
                 child: Container(
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(7),
-                    color: Colors.blue,
+                    color: CustomColors.warnabiru,
                   ),
                   child: Column(
                     children: [
@@ -601,7 +602,7 @@ class SettingProfileView extends GetView<SettingProfileController> {
                         child: Text(
                           "Simpan Perubahan",
                           style: TextStyle(
-                            color: Colors.white,
+                            color: CustomColors.warnaputih,
                             fontWeight: FontWeight.bold,
                           ),
                         ),
@@ -657,7 +658,7 @@ class SettingProfileView extends GetView<SettingProfileController> {
                     child: Container(
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(7),
-                        color: Colors.blue,
+                        color: CustomColors.warnabiru,
                       ),
                       child: Column(
                         children: [
@@ -666,7 +667,7 @@ class SettingProfileView extends GetView<SettingProfileController> {
                             child: Text(
                               "Kembali",
                               style: TextStyle(
-                                color: Colors.white,
+                                color: CustomColors.warnaputih,
                                 fontWeight: FontWeight.bold,
                               ),
                             ),
@@ -708,7 +709,7 @@ class SettingProfileView extends GetView<SettingProfileController> {
                             child: Text(
                               "Logout",
                               style: TextStyle(
-                                color: Colors.white,
+                                color: CustomColors.warnaputih,
                                 fontWeight: FontWeight.bold,
                               ),
                             ),
@@ -731,7 +732,7 @@ class SettingProfileView extends GetView<SettingProfileController> {
         padding: const EdgeInsets.all(10),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(10),
-          color: Colors.white,
+          color: CustomColors.warnaputih,
         ),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -741,7 +742,7 @@ class SettingProfileView extends GetView<SettingProfileController> {
               style: const TextStyle(
                 fontSize: 18,
                 fontWeight: FontWeight.w500,
-                color: Colors.black,
+                color: CustomColors.warnahitam,
               ),
             ),
             const Icon(

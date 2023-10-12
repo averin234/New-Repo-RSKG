@@ -1,5 +1,5 @@
 name: rskgcare
-version: 1.0.1+1
+version: 1.0.0+1
 publish_to: none
 description: Rumah Sakit Budi Kemuliaan.
 
@@ -14,6 +14,7 @@ dependencies:
   pull_to_refresh: ^2.0.0
   gif_view: ^0.3.1
   dismissible_page: ^1.0.2
+  particles_flutter: ^0.1.4
   launch_review: ^3.0.1
   smartrefresh: ^0.0.2
   dropdown_button2: ^2.1.2

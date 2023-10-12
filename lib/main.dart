@@ -2,10 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
-import 'package:rskgcare/app/data/componen/fetch_data.dart';
+import 'package:rskgcare/app/widgets/endpoint/fetch_data.dart';
 import 'package:rskgcare/app/data/componen/publics.dart';
 import 'package:rskgcare/app/data/model/profile_pasien/data_px.dart';
 import 'app/routes/app_pages.dart';
+import 'app/widgets/color/custom_color.dart';
+import 'app/widgets/text/string_text.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -30,12 +32,12 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
-      title: 'RSKG Habibi Ainun',
+      title: '${CustomStringText().namaRS}',
       theme: ThemeData(
         appBarTheme: const AppBarTheme(
-          color: Colors.white,
-          foregroundColor: Colors.black,
-          iconTheme: IconThemeData(color: Colors.black),
+          color: CustomColors.warnaputih,
+          foregroundColor: CustomColors.warnahitam,
+          iconTheme: IconThemeData(color: CustomColors.warnahitam),
         ),
       ),
       darkTheme: AppTheme.darkTheme,
@@ -53,20 +55,20 @@ class AppTheme {
   static final lightTheme = ThemeData(
       brightness: Brightness.light,
       appBarTheme: AppBarTheme(
-        color: Colors.white,
-        foregroundColor: Colors.black87,
-        iconTheme: IconThemeData(color: Colors.black),
+        color: CustomColors.warnaputih,
+        foregroundColor: CustomColors.warnahitam,
+        iconTheme: IconThemeData(color: CustomColors.warnahitam),
       ));
   static final darkTheme = ThemeData(
       brightness: Brightness.dark,
       colorScheme: ColorScheme.dark(
-        background: Colors.black87,
+        background: CustomColors.warnahitam,
         primary: Colors.grey[900]!,
         secondary: Colors.grey[900]!,
       ),
       appBarTheme: AppBarTheme(
-        backgroundColor: Colors.black87,
-        foregroundColor: Colors.white,
-        iconTheme: IconThemeData(color: Colors.black),
+        backgroundColor: CustomColors.warnahitam,
+        foregroundColor: CustomColors.warnaputih,
+        iconTheme: IconThemeData(color: CustomColors.warnahitam),
       ));
 }

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../../../../widgets/color/custom_color.dart';
+
 class CardNoSpesialisasi extends StatelessWidget {
   const CardNoSpesialisasi({
     super.key,
@@ -14,17 +16,17 @@ class CardNoSpesialisasi extends StatelessWidget {
           child: Container(
             padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 20),
             alignment: Alignment.center,
-            decoration: const BoxDecoration(
+            decoration: BoxDecoration(
               borderRadius: BorderRadius.all(Radius.circular(10)),
               boxShadow: <BoxShadow>[
                 BoxShadow(
-                  color: Colors.white12,
+                  color: CustomColors.warnaputih,
                   offset: Offset(2, 1),
                   blurRadius: 1,
                   spreadRadius: 2,
                 ),
               ],
-              color: Colors.white,
+              color: CustomColors.warnaputih,
             ),
             child: Image.asset('assets/images/nospesialisasi.png'),
           ),

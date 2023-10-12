@@ -2,11 +2,11 @@ import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:rskgcare/app/data/componen/fetch_data.dart';
+import 'package:rskgcare/app/widgets/endpoint/fetch_data.dart';
 import 'package:rskgcare/app/modules/register_telemedic/views/widgets/card_form_tele.dart';
 import 'package:rskgcare/app/modules/register_telemedic/views/widgets/widget_slider_hemo.dart';
-
-import '../../../data/componen/my_font_size.dart';
+import '../../../widgets/color/custom_color.dart';
+import '../../../widgets/font_size/my_font_size.dart';
 import '../controllers/register_telemedic_controller.dart';
 
 class RegisterTelemedicView extends GetView<RegisterTelemedicController> {
@@ -23,7 +23,7 @@ class RegisterTelemedicView extends GetView<RegisterTelemedicController> {
             stretch: true,
             leading: IconButton(
                 icon: const Icon(Icons.arrow_circle_left_rounded),
-                color: Colors.blue,
+                color: CustomColors.warnabiru,
                 iconSize: 40,
                 onPressed: () {
                   Get.back();
@@ -55,7 +55,7 @@ class RegisterTelemedicView extends GetView<RegisterTelemedicController> {
       ),
       bottomNavigationBar: Container(
         decoration: BoxDecoration(
-          color: Colors.white,
+          color: CustomColors.warnaputih,
           boxShadow: [
             BoxShadow(
               color: const Color(0xFFe0e0e0).withOpacity(0.5),
@@ -78,7 +78,7 @@ class RegisterTelemedicView extends GetView<RegisterTelemedicController> {
                   Padding(
                       padding: EdgeInsets.only(left: 10),
                       child: Text("Regis Hemodialisis utk Lanjutkan",
-                          style: TextStyle(color: Colors.black))),
+                          style: TextStyle(color: CustomColors.warnahitam))),
                 ],
               ),
             ),

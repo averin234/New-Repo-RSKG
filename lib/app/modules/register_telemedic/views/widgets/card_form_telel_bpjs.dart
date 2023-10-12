@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:rskgcare/app/modules/register_telemedic/controllers/register_telemedic_controller.dart';
 
+import '../../../../widgets/color/custom_color.dart';
+
 class CardFromPBJS extends StatelessWidget {
   const CardFromPBJS({super.key});
   @override
@@ -127,11 +129,11 @@ class CardFromPBJS extends StatelessWidget {
       width: Get.width,
       padding: const EdgeInsets.symmetric(vertical: 15),
       alignment: Alignment.center,
-      decoration: const BoxDecoration(
+      decoration: BoxDecoration(
           borderRadius: BorderRadius.all(Radius.circular(10)),
           boxShadow: <BoxShadow>[
             BoxShadow(
-                color: Colors.white12,
+                color: CustomColors.warnaputih,
                 offset: Offset(2, 1),
                 blurRadius: 1,
                 spreadRadius: 2)
@@ -142,7 +144,7 @@ class CardFromPBJS extends StatelessWidget {
               colors: [Colors.green, Colors.green])),
       child: const Text(
         'Kirim',
-        style: TextStyle(fontSize: 20, color: Colors.white),
+        style: TextStyle(fontSize: 20, color: CustomColors.warnaputih),
       ),
     );
   }

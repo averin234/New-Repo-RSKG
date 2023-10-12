@@ -7,6 +7,7 @@ import 'package:rskgcare/app/modules/login/views/widgets/custom_clippers/grey_to
 import 'package:rskgcare/app/modules/login/views/widgets/custom_clippers/white_top_clipper.dart';
 import 'package:rskgcare/app/modules/login/views/widgets/header.dart';
 import 'package:rskgcare/app/modules/login/views/widgets/login_form.dart';
+import '../../../widgets/color/custom_color.dart';
 import 'constants.dart';
 
 class LoginView extends GetView<LoginController> {
@@ -143,7 +144,7 @@ class _LoginView1State extends State<LoginView1>
                 child: child,
               );
             },
-            child: Container(color: kWhite),
+            child: Container(color:CustomColors.warnaputih),
           ),
           ListView(
             children: [

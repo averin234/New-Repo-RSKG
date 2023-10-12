@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:rskgcare/app/data/componen/fetch_data.dart';
+import 'package:rskgcare/app/widgets/endpoint/fetch_data.dart';
 import 'package:rskgcare/app/data/model/homepage/poli.dart';
 import 'package:rskgcare/app/modules/register_rs/controllers/register_rs_controller.dart';
-import 'package:rskgcare/app/modules/register_rs/views/widgets/widget_listview_poli.dart';
+import 'package:rskgcare/app/widgets/card/card_listview_poli.dart';
 import 'package:search_page/search_page.dart';
 
 import '../../../../data/model/regist_rs/all_dokter_klinik.dart';
+import '../../../../widgets/color/custom_color.dart';
 
 class CariDokter extends StatefulWidget {
   const CariDokter({
@@ -89,7 +90,8 @@ class AppTextField extends StatelessWidget {
                 delegate: SearchPage<Items>(
                   items: data,
                   searchLabel: 'Cari Nama Dokter/Spesialisasi/Hari Periksa',
-                  searchStyle: GoogleFonts.nunito(color: Colors.black),
+                  searchStyle:
+                      GoogleFonts.nunito(color: CustomColors.warnahitam),
                   showItemsOnEmpty: true,
                   failure: Center(
                     child: Text(
@@ -113,7 +115,7 @@ class AppTextField extends StatelessWidget {
                 Icons.person_search_rounded,
                 size: 30,
               ),
-              color: Colors.blue,
+              color: CustomColors.warnabiru,
             );
           } else {
             return Container();
@@ -172,17 +174,17 @@ class AppTextField extends StatelessWidget {
                   decoration: InputDecoration(
                     filled: true,
                     fillColor: Theme.of(context).brightness == Brightness.light
-                        ? Colors.white
-                        : Color(0xff2C3333),
-                    suffixIcon:
-                        const Icon(Icons.search_rounded, color: Colors.blue),
+                        ? CustomColors.warnaputih
+                        : CustomColors.darkmode1,
+                    suffixIcon: const Icon(Icons.search_rounded,
+                        color: CustomColors.warnabiru),
                     contentPadding: const EdgeInsets.only(
                         left: 8, bottom: 0, top: 0, right: 15),
                     hintText: hint,
                     hintStyle: TextStyle(
                       color: Theme.of(context).brightness == Brightness.light
-                          ? Colors.black
-                          : Colors.white,
+                          ? CustomColors.warnahitam
+                          : CustomColors.warnaputih,
                     ),
                     border: const OutlineInputBorder(
                       borderSide: BorderSide(

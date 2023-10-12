@@ -2,6 +2,7 @@ import 'package:dropdown_search/dropdown_search.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../data/model/dropdown_model.dart';
+import '../../../../widgets/color/custom_color.dart';
 
 class MyDropDown2 extends StatelessWidget {
   final List<Dropdowns> items;
@@ -11,18 +12,18 @@ class MyDropDown2 extends StatelessWidget {
   final TextEditingController controller1;
   const MyDropDown2(
       {super.key,
-        required this.items,
-        required this.controller,
-        required this.controller1,
-        required this.labelText,
-        this.selectedItem});
+      required this.items,
+      required this.controller,
+      required this.controller1,
+      required this.labelText,
+      this.selectedItem});
 
   @override
   Widget build(BuildContext context) {
     return Container(
       padding: const EdgeInsets.only(top: 5, bottom: 5),
       decoration: const BoxDecoration(
-        color: Colors.white,
+        color: CustomColors.warnaputih,
         borderRadius: BorderRadius.all(
           Radius.circular(10.0),
         ),
@@ -39,11 +40,13 @@ class MyDropDown2 extends StatelessWidget {
             contentPadding: EdgeInsets.symmetric(vertical: 0, horizontal: 10),
             enabledBorder: OutlineInputBorder(
               borderSide: BorderSide(
-                width: 1, color: Color(0xffeaeaea),),
-              borderRadius: BorderRadius.circular(10.0),//<-- SEE HERE
+                width: 1,
+                color: Color(0xffeaeaea),
+              ),
+              borderRadius: BorderRadius.circular(10.0), //<-- SEE HERE
             ),
             border:
-            OutlineInputBorder(borderSide: BorderSide(color: Colors.grey)),
+                OutlineInputBorder(borderSide: BorderSide(color: Colors.grey)),
           ),
         ),
         onChanged: (value) {

@@ -3,11 +3,13 @@ import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:launch_review/launch_review.dart';
 import 'package:rskgcare/app/data/componen/data_regist_model.dart';
-import 'package:rskgcare/app/data/componen/fetch_data.dart';
+import 'package:rskgcare/app/widgets/endpoint/fetch_data.dart';
 import 'package:rskgcare/app/data/componen/local_storage.dart';
 import 'package:rskgcare/app/data/model/login_and_regist/akses_px.dart';
 import 'package:rskgcare/app/modules/login/controllers/login_controller.dart';
 import '../../../../routes/app_pages.dart';
+import '../../../../widgets/color/custom_color.dart';
+import '../../../../widgets/text/string_text.dart';
 import '../constants.dart';
 import 'custom_button.dart';
 import 'custom_input_field.dart';
@@ -83,7 +85,7 @@ class LoginForm extends StatelessWidget {
                   builder: (context) => LupaPassword(context),
                 ),
                 title: Text(
-                  "Lupa Password ?",
+                  "${CustomStringText().LupaPassword}",
                   style: GoogleFonts.nunito(fontWeight: FontWeight.bold),
                 ),
               ),
@@ -103,7 +105,7 @@ class LoginForm extends StatelessWidget {
                     onChanged: (value) => controller.ingatSaya.value = value!,
                   ),
                   title: Text(
-                    "Ingat Saya",
+                    "${CustomStringText().IngatSaya}",
                     style: GoogleFonts.nunito(fontWeight: FontWeight.bold),
                   ),
                 ),
@@ -115,44 +117,27 @@ class LoginForm extends StatelessWidget {
               additionalOffset: 2 * space,
               child: CustomButton(
                 color: kBlue,
-                textColor: kWhite,
-                text: 'Login Sekarang',
+                textColor: CustomColors.warnaputih,
+                text: '${CustomStringText().LoginSekarang}',
                 onPressed: () async {
                   if (controller.passwordController.text.isNotEmpty &&
-                      controller.usernameController.text.isNotEmpty) {
+                      controller.passwordController.text.isNotEmpty) {
                     Get.defaultDialog(
                       content: const CircularProgressIndicator(),
                       title: 'Loading..',
                       barrierDismissible: false,
                     );
-
                     await LocalStorages.setDataRegist(
                         DataRegist(ingatSaya: controller.ingatSaya.value));
-
                     AksesPX aksesPX = await API.getAksesPx(
                       pass: controller.passwordController.text,
                       user: controller.usernameController.text,
                     );
-                    if (aksesPX.code == 500) {
-                      showModalBottomSheet(
-                        showDragHandle: true,
-                        context: context,
-                        enableDrag: false,
-                        shape: const RoundedRectangleBorder(
-                          borderRadius: BorderRadius.vertical(
-                            top: Radius.circular(20),
-                          ),
-                        ),
-                        builder: (context) => buildSheet(),
-                      );
-                    } else if (aksesPX.code == 300) {
+                    if (aksesPX.code != 200) {
                       Get.snackbar(
                           aksesPX.code.toString(), aksesPX.msg.toString());
-                    } else if (aksesPX.code == 200) {
-                      Get.offAllNamed(Routes.HOME);
                     } else {
-                      Get.snackbar(
-                          aksesPX.code.toString(), aksesPX.msg.toString());
+                      Get.offAllNamed(Routes.HOME);
                     }
                   } else {
                     Get.snackbar('404', 'Username dan Password harus di Isi');
@@ -167,8 +152,8 @@ class LoginForm extends StatelessWidget {
               additionalOffset: 4 * space,
               child: CustomButton(
                 color: kBlack,
-                textColor: kWhite,
-                text: 'Registrasi Akun',
+                textColor: CustomColors.warnaputih,
+                text: '${CustomStringText().RegistrasiAkun}',
                 onPressed: () {
                   Get.toNamed(Routes.REGISTER);
                 },
@@ -198,16 +183,16 @@ class LoginForm extends StatelessWidget {
                 child: Center(
               child: Column(
                 children: [
-                  const Text(
-                      "Maaf Menganggu penggunaan Aplikasi RSBK HealthCare\nMohon Segera Update Aplikasi",
+                  Text(
+                      "${CustomStringText().UpdateAplikasi}",
                       style:
                           TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
                       textAlign: TextAlign.center),
                   const SizedBox(
                     height: 5,
                   ),
-                  const Text(
-                      "Untuk Mendapatankan Perbaikan dan Kenyamanan dalam Pengoprasian Aplikasi RSBK HealthCare",
+                  Text(
+                      "Untuk Mendapatankan Perbaikan dan Kenyamanan dalam Pengoprasian Aplikasi ${CustomStringText().namaRS}",
                       style: TextStyle(fontSize: 15),
                       textAlign: TextAlign.center),
                   const SizedBox(
@@ -236,9 +221,9 @@ class LoginForm extends StatelessWidget {
                               children: [
                                 Padding(
                                   padding: EdgeInsets.all(16),
-                                  child: Text("Cancel",
+                                  child: Text("${CustomStringText().Kembali}",
                                       style: TextStyle(
-                                          color: Colors.black,
+                                          color: CustomColors.warnahitam,
                                           fontWeight: FontWeight.bold)),
                                 ),
                               ],
@@ -266,7 +251,7 @@ class LoginForm extends StatelessWidget {
                                   padding: EdgeInsets.all(16),
                                   child: Text("Update Aplikasi",
                                       style: TextStyle(
-                                          color: Colors.white,
+                                          color: CustomColors.warnaputih,
                                           fontWeight: FontWeight.bold)),
                                 ),
                               ],
@@ -299,17 +284,17 @@ Widget LupaPassword(context) {
         mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          const Text('Lupa Password',
+           Text('${CustomStringText().LupaPassword}',
               textAlign: TextAlign.center,
-              style:
-                  TextStyle(fontWeight: FontWeight.bold, color: Colors.black)),
+              style: TextStyle(
+                  fontWeight: FontWeight.bold, color: CustomColors.warnahitam)),
           const SizedBox(
             height: 20,
           ),
-          const Padding(
+           Padding(
             padding: EdgeInsets.only(right: 10, left: 10),
             child: Text(
-                'kami akan mengirimkan email berisi Default Password untuk menyetel ulang sandi Anda'),
+                '${CustomStringText().ulangsandi}'),
           ),
           const SizedBox(
             height: 30,
@@ -320,7 +305,7 @@ Widget LupaPassword(context) {
             children: [
               Padding(
                 padding: EdgeInsets.only(left: 15),
-                child: Text("Masukan Email Anda",
+                child: Text("${CustomStringText().MasukanEmail}",
                     textAlign: TextAlign.start,
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
@@ -340,7 +325,7 @@ Widget LupaPassword(context) {
                 child: Container(
                   margin: const EdgeInsets.only(left: 10),
                   decoration: BoxDecoration(
-                    color: Colors.white,
+                    color: CustomColors.warnaputih,
                     borderRadius: BorderRadius.circular(10),
                     border: Border.all(color: const Color(0x6cc7d1db)),
                   ),
@@ -383,7 +368,7 @@ Widget LupaPassword(context) {
                 Get.back();
                 if (postLupaPassword.code == 200) {
                   Get.snackbar('200',
-                      'Password baru sudah berhasil di kirim ke alamat email');
+                      '${CustomStringText().kirimemail}');
                   Get.back();
                 } else {
                   Get.defaultDialog(
@@ -393,7 +378,7 @@ Widget LupaPassword(context) {
                 }
               } else {
                 Get.snackbar('500',
-                    'Email yg di masukan harus sesuai dengan akun yang sudah terdaftar di Aplikasi RSBK HealthCare');
+                    'Email yg di masukan harus sesuai dengan akun yang sudah terdaftar di Aplikasi ${CustomStringText().namaRS}');
               }
             },
             child: SizedBox(
@@ -410,10 +395,10 @@ Widget LupaPassword(context) {
                     crossAxisAlignment: CrossAxisAlignment.center,
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Text("Submit",
+                      Text("${CustomStringText().Submit}",
                           style: TextStyle(
                               fontWeight: FontWeight.bold,
-                              color: Colors.white)),
+                              color: CustomColors.warnaputih)),
                     ],
                   )),
             ),

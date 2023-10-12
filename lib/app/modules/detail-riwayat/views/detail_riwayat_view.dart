@@ -2,14 +2,16 @@ import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:rskgcare/app/data/componen/fetch_data.dart';
-import 'package:rskgcare/app/modules/detail-riwayat/views/widgets/widget_Resep_view.dart';
-import 'package:rskgcare/app/modules/detail-riwayat/views/widgets/widget_detail_view.dart';
-import 'package:rskgcare/app/modules/detail-riwayat/views/widgets/widget_tindakan_view.dart';
-import 'package:rskgcare/app/modules/detail-riwayat/views/widgets/widget_title_resep.dart';
-import 'package:rskgcare/app/modules/detail-riwayat/views/widgets/widget_vitalsign_view.dart';
+import 'package:rskgcare/app/widgets/endpoint/fetch_data.dart';
+import 'package:rskgcare/app/widgets/card/card_detail_view.dart';
 import 'package:pull_to_refresh/pull_to_refresh.dart';
 
+import '../../../widgets/card/card_Resep_view.dart';
+import '../../../widgets/card/card_tindakan_view.dart';
+import '../../../widgets/card/card_title_resep.dart';
+import '../../../widgets/card/card_vitalsign_view.dart';
+import '../../../widgets/color/custom_color.dart';
+import '../../../widgets/text/string_text.dart';
 import '../controllers/detail_riwayat_controller.dart';
 
 class DetailRiwayatView extends StatefulWidget {
@@ -38,33 +40,33 @@ class _DetailRiwayatViewState extends State<DetailRiwayatView> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Theme.of(context).brightness == Brightness.light
-          ? Color(0xffecf8ff)
-          : Color(0xff2C3333),
+          ? CustomColors.warnabirumuda1
+          : CustomColors.darkmode1,
       body: SmartRefresher(
         controller: _refreshController,
         enablePullDown: true,
-        header: WaterDropMaterialHeader(),
+        header: WaterDropHeader(),
         onLoading: _onLoading,
         onRefresh: _onRefresh,
         child: CustomScrollView(
           slivers: [
             SliverAppBar(
               backgroundColor: Theme.of(context).brightness == Brightness.light
-                  ? Colors.white
-                  : Color(0xff2C3333),
+                  ? CustomColors.warnaputih
+                  : CustomColors.darkmode1,
               floating: true,
               pinned: true,
               snap: true,
               stretch: true,
               leading: IconButton(
                   icon: const Icon(Icons.arrow_circle_left_rounded),
-                  color: Colors.blue,
+                  color: CustomColors.warnabiru,
                   iconSize: 40,
                   onPressed: () {
                     Get.back();
                   }),
               title: Text(
-                "Riwayat Pasien",
+                "${CustomStringText().RiwayatPasien}",
                 style: GoogleFonts.nunito(
                     fontSize: 18, fontWeight: FontWeight.bold),
               ),

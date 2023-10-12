@@ -38,7 +38,6 @@ const linkColor = Color(0xFF0000EE);
 const text70OpacColor = Color(0xB3FFFFFF);
 const buttonTextColor = Color(0xFF0F4E6F);
 
-const white = Color(0xffffffff);
 const whiteTransparent = Color(0x80FFFFFF);
 const black = Color(0xFF000000);
 const black80 = Color(0x80000000);

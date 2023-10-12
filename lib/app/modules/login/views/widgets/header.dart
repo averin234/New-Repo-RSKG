@@ -3,6 +3,8 @@ import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:rskgcare/app/routes/app_pages.dart';
 
+import '../../../../widgets/assets/logo.dart';
+import '../../../../widgets/text/string_text.dart';
 import '../constants.dart';
 import 'fade_slide_transition.dart';
 
@@ -42,7 +44,7 @@ class Headerlogin extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Image.asset(
-                'assets/logo_rskg.png',
+                Assets.assetsLogoRs,
                 height: 60,
                 width: 100,
               ),
@@ -51,7 +53,7 @@ class Headerlogin extends StatelessWidget {
                 animation: animation,
                 additionalOffset: 0.0,
                 child: Text(
-                  'RSKG Habibi Ainun',
+                  '${CustomStringText().namaRS}',
                   style: Theme.of(context).textTheme.headlineSmall!.copyWith(
                         color: kBlack,
                         fontWeight: FontWeight.bold,
@@ -63,7 +65,7 @@ class Headerlogin extends StatelessWidget {
                 animation: animation,
                 additionalOffset: 16.0,
                 child: Text(
-                  'Health Care for RSKG Habibi Ainun Patient, online registration and E - MR.',
+                  'Health Care for ${CustomStringText().namaRS} Patient, online registration and E - MR.',
                   style: Theme.of(context).textTheme.titleMedium!.copyWith(
                         color: kBlack.withOpacity(0.5),
                       ),

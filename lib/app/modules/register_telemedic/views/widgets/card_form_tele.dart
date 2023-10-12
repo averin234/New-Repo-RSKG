@@ -5,6 +5,7 @@ import 'package:rskgcare/app/modules/register_telemedic/controllers/register_tel
 import 'package:rskgcare/app/modules/register_telemedic/views/widgets/card_form_telel_asuransi.dart';
 import 'package:rskgcare/app/modules/register_telemedic/views/widgets/card_form_telel_bpjs.dart';
 
+import '../../../../widgets/color/custom_color.dart';
 import 'card_form_info_tele.dart';
 import 'card_form_telel2.dart';
 import 'mydropdown.dart';
@@ -139,11 +140,11 @@ class CardFromTele extends GetView<RegisterTelemedicController> {
       width: 240,
       padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 30),
       alignment: Alignment.center,
-      decoration: const BoxDecoration(
+      decoration:  BoxDecoration(
           borderRadius: BorderRadius.all(Radius.circular(10)),
           boxShadow: <BoxShadow>[
             BoxShadow(
-                color: Colors.white12,
+                color: CustomColors.warnaputih,
                 offset: Offset(2, 1),
                 blurRadius: 1,
                 spreadRadius: 2)
@@ -155,7 +156,9 @@ class CardFromTele extends GetView<RegisterTelemedicController> {
       child: const Text(
         'Kirim',
         style: TextStyle(
-            fontSize: 20, color: Colors.white, fontWeight: FontWeight.bold),
+            fontSize: 20,
+            color: CustomColors.warnaputih,
+            fontWeight: FontWeight.bold),
       ),
     );
   }

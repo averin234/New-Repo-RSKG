@@ -2,13 +2,15 @@ import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
 
+import '../../../../widgets/color/custom_color.dart';
+
 class CardFromInfoTele extends StatelessWidget {
   const CardFromInfoTele({super.key});
   @override
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-        color: Colors.white,
+        color: CustomColors.warnaputih,
       ),
       child: Stack(
         children: <Widget>[

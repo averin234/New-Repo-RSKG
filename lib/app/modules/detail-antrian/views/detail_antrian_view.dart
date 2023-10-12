@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
-
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:rskgcare/app/modules/detail-antrian/views/widgets/card_ticket_antrian.dart';
+import 'package:rskgcare/app/widgets/card/card_ticket_antrian.dart';
 import 'package:pull_to_refresh/pull_to_refresh.dart';
-
-import '../../../data/componen/my_font_size.dart';
+import '../../../widgets/color/custom_color.dart';
+import '../../../widgets/font_size/my_font_size.dart';
+import '../../../widgets/text/string_text.dart';
 import '../../daftar_antrian/views/daftar_antrian_view.dart';
 import '../controllers/detail_antrian_controller.dart';
 
@@ -45,65 +45,68 @@ class _DetailAntrianViewState extends State<DetailAntrianView> {
       },
       child: Scaffold(
         backgroundColor: Theme.of(context).brightness == Brightness.light
-            ? Color(0xffecf8ff)
-            : Color(0xff2C3333),
-        body: SmartRefresher(
-          controller: _refreshController,
-          enablePullDown: true,
-          header: WaterDropMaterialHeader(),
-          onLoading: _onLoading,
-          onRefresh: _onRefresh,
-          child: CustomScrollView(
-            slivers: [
-              SliverAppBar(
-                backgroundColor:
-                    Theme.of(context).brightness == Brightness.light
-                        ? Colors.white
-                        : Color(0xff2C3333),
-                floating: true,
-                pinned: true,
-                snap: true,
-                stretch: true,
-                leading: IconButton(
-                    icon: const Icon(Icons.arrow_circle_left_rounded),
-                    color: Colors.blue,
-                    iconSize: 40,
-                    onPressed: () {
-                      Get.back();
-                    }),
-                title: Text(
-                  "Detail Antrean",
-                  style: GoogleFonts.nunito(
-                      fontSize: MyFontSize.large1, fontWeight: FontWeight.bold),
-                ),
-                actions: const [
-                  // IconButton(
-                  //     onPressed: () => Navigator.of(context)
-                  //         .push(MaterialPageRoute(builder: (_) => const SearchPage())),
-                  //     icon: const Icon(Icons.search))
-                ],
-                bottom: AppBar(
-                  toolbarHeight: 0,
-                ),
-              ),
-              // Other Sliver Widgets
-              SliverList(
-                delegate: SliverChildListDelegate([
-                  Column(
-                    children: AnimationConfiguration.toStaggeredList(
-                        duration: const Duration(milliseconds: 375),
-                        childAnimationBuilder: (widget) => ScaleAnimation(
-                              child: FadeInAnimation(
-                                child: widget,
-                              ),
-                            ),
-                        children: <Widget>[
-                          const CardTicketAntrian(),
-                        ]),
+            ? CustomColors.warnabirumuda1
+            : CustomColors.darkmode1,
+        body: SafeArea(
+          child: SmartRefresher(
+            controller: _refreshController,
+            enablePullDown: true,
+            header: WaterDropHeader(),
+            onLoading: _onLoading,
+            onRefresh: _onRefresh,
+            child: CustomScrollView(
+              slivers: [
+                SliverAppBar(
+                  backgroundColor:
+                      Theme.of(context).brightness == Brightness.light
+                          ? CustomColors.warnaputih
+                          : CustomColors.darkmode1,
+                  floating: true,
+                  pinned: true,
+                  snap: true,
+                  stretch: true,
+                  leading: IconButton(
+                      icon: const Icon(Icons.arrow_circle_left_rounded),
+                      color: CustomColors.warnabiru,
+                      iconSize: 40,
+                      onPressed: () {
+                        Get.back();
+                      }),
+                  title: Text(
+                    "${CustomStringText().DetailAntrean}",
+                    style: GoogleFonts.nunito(
+                        fontSize: MyFontSize.large1,
+                        fontWeight: FontWeight.bold),
                   ),
-                ]),
-              ),
-            ],
+                  actions: const [
+                    // IconButton(
+                    //     onPressed: () => Navigator.of(context)
+                    //         .push(MaterialPageRoute(builder: (_) => const SearchPage())),
+                    //     icon: const Icon(Icons.search))
+                  ],
+                  bottom: AppBar(
+                    toolbarHeight: 0,
+                  ),
+                ),
+                // Other Sliver Widgets
+                SliverList(
+                  delegate: SliverChildListDelegate([
+                    Column(
+                      children: AnimationConfiguration.toStaggeredList(
+                          duration: const Duration(milliseconds: 375),
+                          childAnimationBuilder: (widget) => ScaleAnimation(
+                                child: FadeInAnimation(
+                                  child: widget,
+                                ),
+                              ),
+                          children: <Widget>[
+                            const CardTicketAntrian(),
+                          ]),
+                    ),
+                  ]),
+                ),
+              ],
+            ),
           ),
         ),
       ),

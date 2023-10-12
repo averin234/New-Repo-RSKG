@@ -3,11 +3,12 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:intl/intl.dart';
-import 'package:rskgcare/app/data/componen/fetch_data.dart';
+import 'package:rskgcare/app/widgets/endpoint/fetch_data.dart';
 import 'package:rskgcare/app/data/model/regist_hemo/dokter_hemo.dart';
-import 'package:rskgcare/app/modules/edit-profile/views/widgets/mydropdown.dart';
+import 'package:rskgcare/app/widgets/componen/mydropdown.dart';
 import 'package:rskgcare/app/modules/register_telemedic/controllers/register_telemedic_controller.dart';
 import '../../../../data/model/dropdown_model.dart';
+import '../../../../widgets/color/custom_color.dart';
 import 'myDropDown1.dart';
 
 class CardFromtele2 extends StatelessWidget {
@@ -153,11 +154,11 @@ class CardFromtele2 extends StatelessWidget {
       width: Get.width,
       padding: const EdgeInsets.symmetric(vertical: 15),
       alignment: Alignment.center,
-      decoration: const BoxDecoration(
+      decoration: BoxDecoration(
           borderRadius: BorderRadius.all(Radius.circular(10)),
           boxShadow: <BoxShadow>[
             BoxShadow(
-                color: Colors.white12,
+                color: CustomColors.warnaputih,
                 offset: Offset(2, 1),
                 blurRadius: 1,
                 spreadRadius: 2)
@@ -168,7 +169,7 @@ class CardFromtele2 extends StatelessWidget {
               colors: [Colors.green, Colors.green])),
       child: const Text(
         'Kirim',
-        style: TextStyle(fontSize: 20, color: Colors.white),
+        style: TextStyle(fontSize: 20, color: CustomColors.warnaputih),
       ),
     );
   }

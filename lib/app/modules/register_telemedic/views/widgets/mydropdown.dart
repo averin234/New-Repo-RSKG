@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 
+import '../../../../widgets/color/custom_color.dart';
 import '../../controllers/register_telemedic_controller.dart';
 
 class WidgetTitle3 extends GetView<RegisterTelemedicController> {
@@ -20,12 +21,12 @@ class WidgetTitle3 extends GetView<RegisterTelemedicController> {
             ),
             Expanded(
               child: Obx(
-                    () => DropdownButtonHideUnderline(
+                () => DropdownButtonHideUnderline(
                   child: DropdownButton2(
                     isExpanded: true,
                     items: List.generate(
                       controller.items.length,
-                          (index) {
+                      (index) {
                         final data = controller.items[index];
                         return DropdownMenuItem<String>(
                           value: data,
@@ -59,10 +60,10 @@ class WidgetTitle3 extends GetView<RegisterTelemedicController> {
                     iconStyleData: const IconStyleData(
                       icon: Icon(
                         Icons.arrow_forward_ios_outlined,
-                        color:  Colors.grey,
+                        color: Colors.grey,
                       ),
                       iconSize: 14,
-                      iconEnabledColor: Colors.white,
+                      iconEnabledColor: CustomColors.warnaputih,
                       iconDisabledColor: Colors.grey,
                     ),
                     dropdownStyleData: DropdownStyleData(

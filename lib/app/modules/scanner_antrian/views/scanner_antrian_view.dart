@@ -2,10 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:mobile_scanner/mobile_scanner.dart';
-import 'package:rskgcare/app/data/componen/fetch_data.dart';
+import 'package:rskgcare/app/widgets/endpoint/fetch_data.dart';
 import 'package:rskgcare/app/modules/scanner_antrian/controllers/scanner_antrian_controller.dart';
 import 'package:rskgcare/app/routes/app_pages.dart';
 
+import '../../../widgets/color/custom_color.dart';
 import '../../home/views/home_view.dart';
 
 class ScannerAntrianView extends GetView<ScannerAntrianController> {
@@ -27,7 +28,7 @@ class ScannerAntrianView extends GetView<ScannerAntrianController> {
           title: const Text('Mobile Scanner'),
           actions: [
             IconButton(
-              color: Colors.white,
+              color: CustomColors.warnaputih,
               icon: ValueListenableBuilder(
                 valueListenable: controller.cameraController.torchState,
                 builder: (context, state, child) {
@@ -43,7 +44,7 @@ class ScannerAntrianView extends GetView<ScannerAntrianController> {
               onPressed: () => controller.cameraController.toggleTorch(),
             ),
             IconButton(
-              color: Colors.black,
+              color: CustomColors.warnahitam,
               icon: ValueListenableBuilder(
                 valueListenable: controller.cameraController.cameraFacingState,
                 builder: (context, state, child) {

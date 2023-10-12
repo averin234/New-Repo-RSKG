@@ -1,28 +1,36 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:rskgcare/app/data/componen/fetch_data.dart';
+import 'package:rskgcare/app/widgets/endpoint/fetch_data.dart';
 import 'package:rskgcare/app/modules/daftar_antrian/controllers/daftar_antrian_controller.dart';
-import 'package:rskgcare/app/modules/daftar_antrian/views/widgets/widget_listview_antrian.dart';
-import 'package:rskgcare/app/modules/daftar_antrian/views/widgets/widgets_select_calender.dart';
-import 'package:rskgcare/app/modules/home/views/widgets/widget_no_antri.dart';
-import 'package:rskgcare/app/modules/shammer/shimmer_antrian.dart';
+import 'package:rskgcare/app/widgets/card/card_listview_antrian.dart';
+import 'package:rskgcare/app/widgets/card/card_select_calender.dart';
 import '../../../routes/app_pages.dart';
-import 'widgets/widget_listview_hemo.dart';
+import '../../../widgets/card/card_no_antri.dart';
+import '../../../widgets/color/custom_color.dart';
+import '../../../widgets/card/card_listview_hemo.dart';
+import '../../../widgets/shammer/shimmer_antrian.dart';
+import '../../../widgets/text/string_text.dart';
 
 class DaftarAntrianView extends GetView<DaftarAntrianController> {
   const DaftarAntrianView({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
-    return DefaultTabController(
+    return WillPopScope(
+        onWillPop: () async {
+      Get.toNamed(Routes.HOME);
+      return true;
+    },
+    child:
+      DefaultTabController(
       length: 2,
       child: Scaffold(
         appBar: AppBar(
           toolbarHeight: 210,
           elevation: 0,
-          title: const Text('Daftar Antrian'),
+          title: Text('${CustomStringText().daftarantrian}'),
           leading: IconButton(
               icon: const Icon(Icons.arrow_circle_left_rounded),
-              color: Colors.blue,
+              color: CustomColors.warnabiru,
               iconSize: 40,
               onPressed: () {
                 Get.toNamed(Routes.HOME);
@@ -47,20 +55,20 @@ class DaftarAntrianView extends GetView<DaftarAntrianController> {
                       color: Colors.grey[200],
                     ),
                     child: TabBar(
-                      labelColor: Colors.white,
-                      unselectedLabelColor: Colors.black,
+                      labelColor: CustomColors.warnaputih,
+                      unselectedLabelColor: CustomColors.warnahitam,
                       indicator: BoxDecoration(
                         borderRadius: BorderRadius.circular(
                           10,
                         ),
                         color: Color(0xff4babe7),
                       ),
-                      tabs: const [
+                      tabs: [
                         Tab(
-                          text: 'Antrian Poli',
+                          text: '${CustomStringText().AntrianPoli}',
                         ),
                         Tab(
-                          text: 'Antrian Hemodialisis',
+                          text: '${CustomStringText().AntrianHemodialisis}',
                         )
                       ],
                     ),
@@ -204,11 +212,12 @@ class DaftarAntrianView extends GetView<DaftarAntrianController> {
                       }),
                   const SizedBox(
                     height: 20,
-                  )
-                ],
+                    )
+                  ],
+                ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );

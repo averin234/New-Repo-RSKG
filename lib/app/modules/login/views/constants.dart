@@ -5,7 +5,6 @@ const Color kBlue = Color(0xff4babe7);
 const Color kBlue1 = Color(0xfff7fbfd);
 const Color kLightBlue = Color(0xFF020917);
 const Color kDarkBlue = Color(0xFF1046B3);
-const Color kWhite = Color(0xFFFFFFFF);
 const Color kGrey = Color(0xFFF4F5F7);
 const Color kBlack = Color(0xFF2D3243);
 

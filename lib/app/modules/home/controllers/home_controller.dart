@@ -4,6 +4,8 @@ import 'package:in_app_update/in_app_update.dart';
 import 'package:package_info/package_info.dart';
 import 'package:rskgcare/app/data/componen/publics.dart';
 
+import '../../../widgets/color/custom_color.dart';
+
 class HomeController extends GetxController {
   //TODO: Implement HomeController
   final dataRegist = Publics.controller.getDataRegist;
@@ -62,11 +64,13 @@ class HomeController extends GetxController {
           width: double.infinity,
           padding: EdgeInsets.all(10),
           decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(10), color: Colors.blue),
+              borderRadius: BorderRadius.circular(10),
+              color: CustomColors.warnabiru),
           child: Center(
             child: Text('Unduh Sekarang',
                 style: TextStyle(
-                    color: Colors.white, fontWeight: FontWeight.bold)),
+                    color: CustomColors.warnaputih,
+                    fontWeight: FontWeight.bold)),
           ),
         ),
       ),

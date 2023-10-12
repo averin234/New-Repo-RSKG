@@ -2,12 +2,13 @@ import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:rskgcare/app/modules/edit-profile/views/widgets/card_edit.dart';
+import 'package:rskgcare/app/widgets/card/card_edit.dart';
 import 'package:text_scroll/text_scroll.dart';
-
-import '../../../data/componen/my_font_size.dart';
-import '../../profile_pasien/views/profile_pasien_view.dart';
-import '../../rubah_password/views/rubah_password_view.dart';
+import '../../../widgets/card/card_penting.dart';
+import '../../../widgets/color/custom_color.dart';
+import '../../../widgets/font_size/my_font_size.dart';
+import '../../../widgets/text/string_text.dart';
+import '../../profile_pasien/views/profile.dart';
 import '../controllers/edit_profile_controller.dart';
 
 class EditProfileView extends GetView<EditProfileController> {
@@ -26,27 +27,27 @@ class EditProfileView extends GetView<EditProfileController> {
       },
       child: Scaffold(
         backgroundColor: Theme.of(context).brightness == Brightness.light
-            ? Color(0xfff6f9fe)
-            : Color(0xff2C3333),
+            ? CustomColors.background
+            : CustomColors.darkmode1,
         body: CustomScrollView(
           slivers: [
             SliverAppBar(
               backgroundColor: Theme.of(context).brightness == Brightness.light
-                  ? Colors.white
-                  : Color(0xff2C3333),
+                  ? CustomColors.warnaputih
+                  : CustomColors.darkmode1,
               floating: true,
               pinned: true,
               snap: true,
               stretch: true,
               leading: IconButton(
                   icon: const Icon(Icons.arrow_circle_left_rounded),
-                  color: Colors.blue,
+                  color: CustomColors.warnabiru,
                   iconSize: 40,
                   onPressed: () {
                     Get.back();
                   }),
               title: Text(
-                "Edit Profile",
+                "${CustomStringText().EditProfile}",
                 style: GoogleFonts.nunito(
                     fontSize: MyFontSize.large1, fontWeight: FontWeight.bold),
               ),
@@ -57,49 +58,7 @@ class EditProfileView extends GetView<EditProfileController> {
             // Other Sliver Widgets
             SliverList(
               delegate: SliverChildListDelegate([
-                Container(
-                    padding: EdgeInsets.only(top: 10, bottom: 10),
-                    decoration: BoxDecoration(
-                      color: Colors.redAccent,
-                      boxShadow: [
-                        BoxShadow(
-                          color: Colors.grey.withOpacity(0.1),
-                          spreadRadius: 5,
-                          blurRadius: 4,
-                          offset: Offset(0, 0), // changes position of shadow
-                        ),
-                      ],
-                    ),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Padding(
-                          padding: EdgeInsets.only(left: 10),
-                          child: Text(
-                            'Penting !!',
-                            style: GoogleFonts.nunito(
-                                fontWeight: FontWeight.bold,
-                                color: Colors.white,
-                                fontSize: 13),
-                          ),
-                        ),
-                        SizedBox(
-                          height: 5,
-                        ),
-                        TextScroll(
-                          'Data diri anda terekam di database RSBK, Mohon periksa kembali data diri anda, dan lakukan refresh saat melakukan perubahan data diri',
-                          textDirection: TextDirection.ltr,
-                          style: GoogleFonts.nunito(
-                              fontWeight: FontWeight.bold,
-                              color: Colors.white,
-                              fontSize: 11),
-                          intervalSpaces: 10,
-                          velocity: const Velocity(
-                            pixelsPerSecond: Offset(8, 0),
-                          ),
-                        ),
-                      ],
-                    )),
+                Penting(),
                 const MyRegister1(),
               ]),
             ),

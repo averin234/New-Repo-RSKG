@@ -18,6 +18,10 @@ class _WidgetInfoState extends State<WidgetInfo> {
     return Container(
       margin: EdgeInsets.only(left: 0, right: 0, top: 0),
       decoration: BoxDecoration(
+        image: const DecorationImage(
+          image: AssetImage(Assets.background,),
+          fit: BoxFit.cover,
+        ),
         borderRadius: BorderRadius.circular(0),
         color: Theme.of(context).brightness == Brightness.light
             ? CustomColors.background

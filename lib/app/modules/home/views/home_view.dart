@@ -8,7 +8,6 @@ import 'package:rskgcare/app/data/componen/images.dart';
 import 'package:rskgcare/app/widgets/card/grid_view_home.dart';
 import 'package:rskgcare/app/routes/app_pages.dart';
 import 'package:pull_to_refresh/pull_to_refresh.dart';
-
 import '../../../widgets/card/card_info_rs.dart';
 import '../../../widgets/card/card_no_antri.dart';
 import '../../../widgets/card/card_slider_poli_home.dart';
@@ -52,7 +51,7 @@ class _HomeView1State extends State<HomeView1> {
         appBar: AppBar(
             toolbarHeight: 70,
             backgroundColor: Theme.of(context).brightness == Brightness.light
-                ? CustomColors.background
+                ? CustomColors.warnaputih
                 : CustomColors.darkmode1,
             title: ListTile(
               leading: GestureDetector(

@@ -29,8 +29,8 @@ import '../../data/model/regist_hemo/daftar_hemo.dart';
 
 class API {
   // static const _url = 'https://rskg.sirs.co.id/';
-  static const _url = 'https://rskg.sirs.co.id/';
-  // static const _url = 'https://rsbk.sirs.co.id/';
+  // static const _url = 'https://rskg.sirs.co.id/';
+  static const _url = 'https://rsbk.sirs.co.id/';
   static const _baseUrl = '${_url}api/v1';
   static const _kodeKlinik = 'C00003';
   static const _getToken = '$_baseUrl/get-token.php';
@@ -68,7 +68,7 @@ class API {
   static Future<Token> getToken() async {
     var response = await Dio().post(_getToken, data: {
       "KeyCode": "MeTiRs",
-      "v": "1",
+      "v": "2",
     });
     final data = jsonDecode(response.data);
     final obj = Token.fromJson(data);

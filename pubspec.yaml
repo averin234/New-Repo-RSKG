@@ -1,7 +1,7 @@
 name: rskgcare
-version: 1.0.0+1
+version: 1.0.3+1
 publish_to: none
-description: Rumah Sakit Budi Kemuliaan.
+description: RSBK healthcare.
 
 environment:
   sdk: ">=2.18.5 <3.0.0"

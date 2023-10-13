@@ -12,7 +12,7 @@ import 'app/widgets/text/string_text.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
-    statusBarColor: Colors.transparent,
+    statusBarColor: Colors.white,
     statusBarIconBrightness: Brightness.light,
   ));
   SystemChrome.setPreferredOrientations([

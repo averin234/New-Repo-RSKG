@@ -46,7 +46,7 @@ class _HomeView1State extends State<HomeView1> {
   Widget build(BuildContext context) {
     return Scaffold(
         backgroundColor: Theme.of(context).brightness == Brightness.light
-            ? CustomColors.background
+            ?  CustomColors.background
             : CustomColors.darkmode1,
         appBar: AppBar(
             toolbarHeight: 70,

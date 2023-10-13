@@ -53,8 +53,8 @@ class _WidgetInfoState extends State<WidgetInfo> {
                   children: [
                     Text(
                       widget.detailklinik.res!.first.namaPerusahaan ?? '',
-                      style: const TextStyle(
-                          fontSize: 18, fontWeight: FontWeight.bold),
+                      style: TextStyle(
+                          fontSize: 18, fontWeight: FontWeight.bold, color: CustomColors.warnahitam ),
                       textAlign: TextAlign.center,
                     ),
                     const SizedBox(
@@ -63,7 +63,7 @@ class _WidgetInfoState extends State<WidgetInfo> {
                     Text(
                       widget.detailklinik.res![0].alamat ?? '',
                       style: const TextStyle(
-                          fontSize: 14, fontWeight: FontWeight.bold),
+                          fontSize: 14, fontWeight: FontWeight.bold, color: CustomColors.warnahitam),
                       textAlign: TextAlign.center,
                     ),
                   ],

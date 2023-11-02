@@ -18,7 +18,7 @@
     <application
         android:label="RSKG Habibie Care"
         android:name="${applicationName}"
-        android:icon="@mipmap/iconsapp">
+        android:icon="@mipmap/launcher_icon_apps">
         <activity
             android:name=".MainActivity"
             android:exported="true"

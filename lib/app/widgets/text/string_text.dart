@@ -1,6 +1,6 @@
 
 class CustomStringText {
-  String namaRS = "RSKG Habibi Care";
+  String namaRS = "RSKG Habibie Care";
   String NamaRSsingkatan = "RSKG";
   String daftarantrian = "Daftar Antrian";
   String AntrianPoli = "Antrian Poli";

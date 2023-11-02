@@ -360,9 +360,9 @@ class SettingProfileView extends GetView<SettingProfileController> {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Center(
-                      child: Text('Aplikasi Versi ${controller.packageName}'),
-                    ),
+                    // Center(
+                    //   child: Text('Aplikasi Versi ${controller.packageName}'),
+                    // ),
                     const SizedBox(
                       height: 20,
                     ),

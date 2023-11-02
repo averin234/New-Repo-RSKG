@@ -1,5 +1,6 @@
+
 class CustomStringText {
-  String namaRS = "RSKG Habibie Ainun";
+  String namaRS = "RSKG Habibi Care";
   String NamaRSsingkatan = "RSKG";
   String daftarantrian = "Daftar Antrian";
   String AntrianPoli = "Antrian Poli";
@@ -31,8 +32,7 @@ class CustomStringText {
       "kami akan mengirimkan email berisi Default Password untuk menyetel ulang sandi Anda";
   String MasukanEmail = "Masukan Email Anda";
   String kirimemail = "Password baru sudah berhasil di kirim ke alamat email";
-  String registrasipoliklinik =
-      "Silahkan daftar atau Login untuk bisa melakukan registrasi poliklinik";
+  String registrasipoliklinik = "Silahkan daftar atau Login untuk bisa melakukan registrasi poliklinik";
   String Submit = "Submit";
   String MasukDaftar = "Masuk/Daftar";
   String Edit = "Edit";

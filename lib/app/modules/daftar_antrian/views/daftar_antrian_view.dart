@@ -27,7 +27,7 @@ class DaftarAntrianView extends GetView<DaftarAntrianController> {
         appBar: AppBar(
           toolbarHeight: 210,
           elevation: 0,
-          title: Text('${CustomStringText().daftarantrian}'),
+          title: Text(CustomStringText().daftarantrian),
           leading: IconButton(
               icon: const Icon(Icons.arrow_circle_left_rounded),
               color: CustomColors.warnabiru,
@@ -61,14 +61,14 @@ class DaftarAntrianView extends GetView<DaftarAntrianController> {
                         borderRadius: BorderRadius.circular(
                           10,
                         ),
-                        color: Color(0xff4babe7),
+                        color: const Color(0xff4babe7),
                       ),
                       tabs: [
                         Tab(
-                          text: '${CustomStringText().AntrianPoli}',
+                          text: CustomStringText().AntrianPoli,
                         ),
                         Tab(
-                          text: '${CustomStringText().AntrianHemodialisis}',
+                          text: CustomStringText().AntrianHemodialisis,
                         )
                       ],
                     ),
@@ -83,7 +83,7 @@ class DaftarAntrianView extends GetView<DaftarAntrianController> {
             SingleChildScrollView(
               child: Column(
                 children: [
-                  SizedBox(
+                  const SizedBox(
                     height: 10,
                   ),
                   FutureBuilder(
@@ -151,7 +151,7 @@ class DaftarAntrianView extends GetView<DaftarAntrianController> {
             SingleChildScrollView(
               child: Column(
                 children: [
-                  SizedBox(
+                  const SizedBox(
                     height: 10,
                   ),
                   FutureBuilder(

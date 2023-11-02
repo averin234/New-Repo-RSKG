@@ -17,7 +17,7 @@ class CardListViewRiawayat extends StatelessWidget {
     return Column(
       children: [
         Container(
-          decoration: BoxDecoration(),
+          decoration: const BoxDecoration(),
           padding: const EdgeInsets.only(top: 10),
           margin: const EdgeInsets.symmetric(vertical: 0, horizontal: 10),
           child: Column(

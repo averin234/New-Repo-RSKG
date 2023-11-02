@@ -140,7 +140,7 @@ class CardFromTele extends GetView<RegisterTelemedicController> {
       width: 240,
       padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 30),
       alignment: Alignment.center,
-      decoration:  BoxDecoration(
+      decoration:  const BoxDecoration(
           borderRadius: BorderRadius.all(Radius.circular(10)),
           boxShadow: <BoxShadow>[
             BoxShadow(
@@ -181,12 +181,12 @@ class CardFromTele extends GetView<RegisterTelemedicController> {
             const SizedBox(
               height: 10,
             ),
-            Padding(
+            const Padding(
               padding: EdgeInsets.only(left: 10),
               child: Text('Registrasi Hemodialisis',
                   style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16)),
             ),
-            Divider(
+            const Divider(
               color: Colors.grey,
             ),
             const SizedBox(
@@ -205,8 +205,8 @@ class CardFromTele extends GetView<RegisterTelemedicController> {
               height: 10,
             ),
             Container(
-              child: Column(
-                children: const [
+              child: const Column(
+                children: [
                   SizedBox(
                     height: 10,
                   ),
@@ -272,8 +272,8 @@ class CustomRadio extends GetView<RegisterTelemedicController> {
         side: BorderSide(
             width: (controller.selectedPayment.value == index) ? 2.0 : 0.5,
             color: (controller.selectedPayment.value == index)
-                ? Color(0xff4babe7)
-                : Color(0xff4babe7)),
+                ? const Color(0xff4babe7)
+                : const Color(0xff4babe7)),
       ),
       child: Stack(
         children: [

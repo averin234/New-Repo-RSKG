@@ -11,7 +11,6 @@ import 'package:pull_to_refresh/pull_to_refresh.dart';
 import '../../../widgets/card/card_info_rs.dart';
 import '../../../widgets/card/card_no_antri.dart';
 import '../../../widgets/card/card_slider_poli_home.dart';
-import '../../../widgets/card/card_slider_poli_no_home.dart';
 import '../../../widgets/card/card_text_raw.dart';
 import '../../../widgets/color/custom_color.dart';
 import '../../../widgets/shammer/shimmer_antrihome.dart';
@@ -33,7 +32,7 @@ class _HomeView1State extends State<HomeView1> {
   final RefreshController _refreshController = RefreshController();
 
   Future<void> _onRefresh() async {
-    await Future.delayed(Duration(seconds: 1));
+    await Future.delayed(const Duration(seconds: 1));
     setState(() {
       entries.add(entries.length);
     });
@@ -108,12 +107,12 @@ class _HomeView1State extends State<HomeView1> {
               }
             },
           ),
-          SizedBox(
+          const SizedBox(
             height: 10,
           ),
           Padding(
-            padding: EdgeInsets.only(left: 20),
-            child: Text("${CustomStringText().Antreanaatini}",
+            padding: const EdgeInsets.only(left: 20),
+            child: Text(CustomStringText().Antreanaatini,
                 style: GoogleFonts.nunito(
                     fontSize: 20, fontWeight: FontWeight.bold)),
           ),
@@ -140,7 +139,7 @@ class _HomeView1State extends State<HomeView1> {
                           return Column(
                             crossAxisAlignment: CrossAxisAlignment.stretch,
                             children: [
-                              Padding(
+                              const Padding(
                                   padding: EdgeInsets.only(
                                       left: 20, top: 0, bottom: 15)),
                               WidgetCard(lists: {'data': data, 'scan': scan}),
@@ -148,8 +147,8 @@ class _HomeView1State extends State<HomeView1> {
                           );
                         } else {
                           return Container(
-                              margin: EdgeInsets.only(right: 20, top: 10),
-                              child: shimmerAntriHome());
+                              margin: const EdgeInsets.only(right: 20, top: 10),
+                              child: const shimmerAntriHome());
                         }
                       });
                 } else {
@@ -157,15 +156,15 @@ class _HomeView1State extends State<HomeView1> {
                 }
               } else {
                 return Container(
-                    margin: EdgeInsets.only(right: 20, top: 10),
-                    child: shimmerAntriHome());
+                    margin: const EdgeInsets.only(right: 20, top: 10),
+                    child: const shimmerAntriHome());
               }
             },
           ),
           Padding(
             padding: const EdgeInsets.only(top: 15, right: 20, left: 20),
             child: Text(
-              "${CustomStringText().LayananUtama}",
+              CustomStringText().LayananUtama,
               style:
                   GoogleFonts.nunito(fontSize: 20, fontWeight: FontWeight.bold),
             ),
@@ -189,8 +188,8 @@ class _HomeView1State extends State<HomeView1> {
               ],
             ),
             padding: const EdgeInsets.all(0),
-            child: Column(
-              children: const [
+            child: const Column(
+              children: [
                 SizedBox(
                   height: 10,
                 ),
@@ -211,6 +210,6 @@ class HomeView extends GetView<HomeController> {
   const HomeView({super.key});
   @override
   Widget build(BuildContext context) {
-    return HomeView1();
+    return const HomeView1();
   }
 }

@@ -10,6 +10,7 @@ import 'package:rskgcare/app/modules/home/controllers/home_controller.dart';
 import 'package:rskgcare/app/modules/profile-view/views/profile_view_view.dart';
 import 'package:text_scroll/text_scroll.dart';
 
+import '../../../generated/assets.dart';
 import '../../routes/app_pages.dart';
 import '../color/custom_color.dart';
 import '../text/string_text.dart';
@@ -97,6 +98,10 @@ class Item1 extends StatelessWidget {
                   child: Image.network(
                     items.foto ?? Avatar.lakiLaki,
                     fit: BoxFit.contain,
+                    errorBuilder: (context, error, stackTrace) {
+                      return Image.asset(Assets.assetsLogoRSKG,
+                          fit: BoxFit.contain);
+                    },
                   ),
                 ),
               ),
@@ -168,7 +173,7 @@ class Item1 extends StatelessWidget {
                 children: [
                   Text(
                       "Anda Belum Terdaftar atau Login di Aplikasi SIRS ${CustomStringText().namaRS}",
-                      style: TextStyle(
+                      style: const TextStyle(
                           color: CustomColors.warnahitam,
                           fontSize: 18,
                           fontWeight: FontWeight.bold),
@@ -207,7 +212,7 @@ class Item1 extends StatelessWidget {
                               borderRadius: BorderRadius.circular(7),
                               color: CustomColors.warnabiru,
                             ),
-                            child: Column(
+                            child: const Column(
                               children: [
                                 Padding(
                                   padding: EdgeInsets.all(16),
@@ -231,7 +236,7 @@ class Item1 extends StatelessWidget {
                               borderRadius: BorderRadius.circular(7),
                               color: Colors.greenAccent,
                             ),
-                            child: Column(
+                            child: const Column(
                               children: [
                                 Padding(
                                   padding: EdgeInsets.all(16),

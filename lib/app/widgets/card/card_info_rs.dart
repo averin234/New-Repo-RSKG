@@ -16,7 +16,7 @@ class _WidgetInfoState extends State<WidgetInfo> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.only(left: 0, right: 0, top: 0),
+      margin: const EdgeInsets.only(left: 0, right: 0, top: 0),
       decoration: BoxDecoration(
         image: const DecorationImage(
           image: AssetImage(Assets.background,),
@@ -31,7 +31,7 @@ class _WidgetInfoState extends State<WidgetInfo> {
             color: Colors.grey.withOpacity(0.1),
             spreadRadius: 5,
             blurRadius: 4,
-            offset: Offset(0, 0), // changes position of shadow
+            offset: const Offset(0, 0), // changes position of shadow
           ),
         ],
       ),
@@ -53,7 +53,7 @@ class _WidgetInfoState extends State<WidgetInfo> {
                   children: [
                     Text(
                       widget.detailklinik.res!.first.namaPerusahaan ?? '',
-                      style: TextStyle(
+                      style: const TextStyle(
                           fontSize: 18, fontWeight: FontWeight.bold, color: CustomColors.warnahitam ),
                       textAlign: TextAlign.center,
                     ),

@@ -58,13 +58,13 @@ android {
     }
     signingConfigs {
         release {
-            storeFile file('C:/Users/irwan/Averin_dev.jks')
+            storeFile file('C:/Users/mtauf/Projects/Averin_dev.jks')
             storePassword '48family'
             keyAlias = 'Averin2023'
             keyPassword '48family'
             applicationVariants.all { variant ->
                 variant.outputs.all {
-                    def appName = "RSBK"
+                    def appName = "RSKG"
                     def buildType = variant.buildType.name
                     def newName
                     if (buildType == 'debug'){

@@ -5,13 +5,13 @@ import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:text_scroll/text_scroll.dart';
 
+import '../../../generated/assets.dart';
 import '../../data/componen/images.dart';
 import '../../data/model/regist_rs/all_dokter_klinik.dart';
 import '../../modules/home/controllers/home_controller.dart';
 import '../../modules/profile-view/views/profile_view_view.dart';
 import '../../modules/register_rs/views/widgets/jadwal_praktik.dart';
 import '../endpoint/fetch_data.dart';
-
 
 class VerticalSliderHome extends GetView<HomeController> {
   const VerticalSliderHome({super.key});
@@ -64,7 +64,7 @@ class Item1 extends StatelessWidget {
       decoration: BoxDecoration(
         color: Theme.of(context).brightness == Brightness.light
             ? Colors.white
-            : Color(0xff404258),
+            : const Color(0xff404258),
         border: Border.all(color: const Color(0x6cc7d1db)),
         borderRadius: BorderRadius.circular(15),
       ),
@@ -98,6 +98,10 @@ class Item1 extends StatelessWidget {
                   child: Image.network(
                     items.foto ?? Avatar.lakiLaki,
                     fit: BoxFit.contain,
+                    errorBuilder: (context, error, stackTrace) {
+                      return Image.asset(Assets.assetsLogoRSKG,
+                          fit: BoxFit.contain);
+                    },
                   ),
                 ),
               ),
@@ -209,7 +213,7 @@ class Item1 extends StatelessWidget {
                           style: GoogleFonts.nunito(
                               fontWeight: FontWeight.bold,
                               color: Theme.of(context).brightness ==
-                                  Brightness.light
+                                      Brightness.light
                                   ? Colors.black
                                   : Colors.white,
                               fontSize: 15),
@@ -234,7 +238,7 @@ class Item1 extends StatelessWidget {
                         child: Text(
                           items.namaBagian ?? '',
                           style:
-                          const TextStyle(color: Colors.blue, fontSize: 13),
+                              const TextStyle(color: Colors.blue, fontSize: 13),
                         ),
                       ),
                     ],
@@ -259,9 +263,9 @@ class Item1 extends StatelessWidget {
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(10),
                           color:
-                          Theme.of(context).brightness == Brightness.light
-                              ? Color(0xffecf8ff)
-                              : Color(0xff404258),
+                              Theme.of(context).brightness == Brightness.light
+                                  ? const Color(0xffecf8ff)
+                                  : const Color(0xff404258),
                         ),
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
@@ -271,13 +275,13 @@ class Item1 extends StatelessWidget {
                               height: 10,
                             ),
                             Padding(
-                              padding: EdgeInsets.only(left: 10),
+                              padding: const EdgeInsets.only(left: 10),
                               child: Text(
                                 'Jadwal Praktik',
                                 style: TextStyle(
                                   fontWeight: FontWeight.bold,
                                   color: Theme.of(context).brightness ==
-                                      Brightness.light
+                                          Brightness.light
                                       ? Colors.black
                                       : Colors.white,
                                 ),
@@ -288,30 +292,30 @@ class Item1 extends StatelessWidget {
                             ),
                             items.jadwal == null
                                 ? Padding(
-                                padding: const EdgeInsets.only(
-                                    right: 100, left: 100),
-                                child: Column(
-                                  children: [
-                                    Image.asset(
-                                      'assets/images/nojadwal.png',
-                                      height: 150,
-                                    ),
-                                    const SizedBox(
-                                      height: 10,
-                                    ),
-                                    const SizedBox(
-                                      height: 10,
-                                    ),
-                                  ],
-                                ))
+                                    padding: const EdgeInsets.only(
+                                        right: 100, left: 100),
+                                    child: Column(
+                                      children: [
+                                        Image.asset(
+                                          'assets/images/nojadwal.png',
+                                          height: 150,
+                                        ),
+                                        const SizedBox(
+                                          height: 10,
+                                        ),
+                                        const SizedBox(
+                                          height: 10,
+                                        ),
+                                      ],
+                                    ))
                                 : Column(
-                              children: items.jadwal!
-                                  .map(
-                                    (e) => JadwalPraktik(
-                                    jadwal: e, items: items),
-                              )
-                                  .toList(),
-                            ),
+                                    children: items.jadwal!
+                                        .map(
+                                          (e) => JadwalPraktik(
+                                              jadwal: e, items: items),
+                                        )
+                                        .toList(),
+                                  ),
                           ],
                         ),
                       ),

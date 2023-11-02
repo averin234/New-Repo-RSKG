@@ -19,7 +19,7 @@ class ScannerAntrianView extends GetView<ScannerAntrianController> {
         Navigator.of(context).pushReplacement(
           MaterialPageRoute(
               builder: (context) =>
-                  HomeView()), // Ganti dengan halaman home Anda
+                  const HomeView()), // Ganti dengan halaman home Anda
         );
         return true;
       },

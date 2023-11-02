@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
 
+import '../../../../generated/assets.dart';
+
 class ProfileViewView extends StatelessWidget {
   final String tag;
   final String src;
@@ -19,6 +21,9 @@ class ProfileViewView extends StatelessWidget {
         child: Image.network(
           src,
           fit: BoxFit.contain,
+          errorBuilder: (context, error, stackTrace) {
+            return Image.asset(Assets.assetsLogoRSKG, fit: BoxFit.contain);
+          },
         ),
       ),
     );

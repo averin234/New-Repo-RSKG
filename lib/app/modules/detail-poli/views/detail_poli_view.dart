@@ -7,13 +7,12 @@ import 'package:rskgcare/app/widgets/card/card_form_poli.dart';
 import 'package:rskgcare/app/widgets/card/card_jadwa_poli_view.dart';
 import 'package:pull_to_refresh/pull_to_refresh.dart';
 
+import '../../../../generated/assets.dart';
 import '../../../widgets/endpoint/fetch_data.dart';
 import '../../../data/model/regist_rs/daftar_px.dart';
 import '../../../routes/app_pages.dart';
 import '../../../widgets/color/custom_color.dart';
 import '../../../widgets/custom_dialog/dialog_registrasi_gagal_regis.dart';
-import '../../../widgets/custom_dialog/dialog_registrasi_poli.dart';
-import '../../../widgets/custom_dialog/dialog_registrasi_sukses.dart';
 import '../../../widgets/text/string_text.dart';
 import '../controllers/detail_poli_controller.dart';
 
@@ -29,7 +28,7 @@ class DetailPoliView extends StatefulWidget {
 class _DetailPoliViewState extends State<DetailPoliView> {
   // this enable our app to able to pull down
   late RefreshController _refreshController; // the refresh controller
-  var _scaffoldKey =
+  final _scaffoldKey =
       GlobalKey<ScaffoldState>(); // this is our key to the scaffold widget
   @override
   void initState() {
@@ -46,7 +45,7 @@ class _DetailPoliViewState extends State<DetailPoliView> {
         child: SmartRefresher(
           controller: _refreshController,
           enablePullDown: true,
-          header: WaterDropHeader(),
+          header: const WaterDropHeader(),
           onLoading: _onLoading,
           onRefresh: _onRefresh,
           child: CustomScrollView(
@@ -62,6 +61,10 @@ class _DetailPoliViewState extends State<DetailPoliView> {
                   background: Image.network(
                     controller.items.foto ?? Avatar.lakiLaki,
                     fit: BoxFit.contain,
+                    errorBuilder: (context, error, stackTrace) {
+                      return Image.asset(Assets.assetsLogoRSKG,
+                          fit: BoxFit.contain);
+                    },
                   ),
                 ),
                 floating: true,
@@ -115,18 +118,18 @@ class _DetailPoliViewState extends State<DetailPoliView> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
                   Padding(
-                      padding: EdgeInsets.only(left: 10),
-                      child: Text("${CustomStringText().PilihKunjungan}",
-                          style: TextStyle())),
+                      padding: const EdgeInsets.only(left: 10),
+                      child: Text(CustomStringText().PilihKunjungan,
+                          style: const TextStyle())),
                 ],
               ),
             ),
             Expanded(
               child: Container(
-                margin: EdgeInsets.only(left: 10, right: 10),
+                margin: const EdgeInsets.only(left: 10, right: 10),
                 child: ElevatedButton(
                   style: ElevatedButton.styleFrom(
-                    primary: CustomColors.warnabiru,
+                    backgroundColor: CustomColors.warnabiru,
                     minimumSize: const Size.fromHeight(50),
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(12), // <-- Radius
@@ -158,20 +161,20 @@ class _DetailPoliViewState extends State<DetailPoliView> {
                           tglDaftar: controller.jadwalController.text,
                         );
                         Get.defaultDialog(
-                          title: '${CustomStringText().SudahTerdaftar}',
+                          title: CustomStringText().SudahTerdaftar,
                           cancel: InkWell(
                             onTap: () async {
                               Get.back();
                             },
                             child: Container(
                               width: double.infinity,
-                              padding: EdgeInsets.all(10),
+                              padding: const EdgeInsets.all(10),
                               decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(10),
                                   color: CustomColors.warnaabu2),
                               child: Center(
-                                child: Text('${CustomStringText().Kembali}',
-                                    style: TextStyle(
+                                child: Text(CustomStringText().Kembali,
+                                    style: const TextStyle(
                                         color: Colors.grey,
                                         fontWeight: FontWeight.bold)),
                               ),
@@ -222,20 +225,20 @@ class _DetailPoliViewState extends State<DetailPoliView> {
                           Get.back();
                           if (daftarPx.code == 500) {
                             Get.defaultDialog(
-                              title: '${CustomStringText().SudahTerdaftar}',
+                              title: CustomStringText().SudahTerdaftar,
                               cancel: InkWell(
                                 onTap: () async {
                                   Get.back();
                                 },
                                 child: Container(
                                   width: double.infinity,
-                                  padding: EdgeInsets.all(10),
+                                  padding: const EdgeInsets.all(10),
                                   decoration: BoxDecoration(
                                       borderRadius: BorderRadius.circular(10),
                                       color: CustomColors.warnaabu2),
                                   child: Center(
-                                    child: Text('${CustomStringText().Kembali}',
-                                        style: TextStyle(
+                                    child: Text(CustomStringText().Kembali,
+                                        style: const TextStyle(
                                             color: Colors.grey,
                                             fontWeight: FontWeight.bold)),
                                   ),
@@ -261,20 +264,20 @@ class _DetailPoliViewState extends State<DetailPoliView> {
                             );
                           } else if (daftarPx.code == 200) {
                             Get.defaultDialog(
-                              title: '${CustomStringText().janjiTemu}',
+                              title: CustomStringText().janjiTemu,
                               cancel: InkWell(
                                 onTap: () async {
                                   Get.back();
                                 },
                                 child: Container(
                                   width: double.infinity,
-                                  padding: EdgeInsets.all(10),
+                                  padding: const EdgeInsets.all(10),
                                   decoration: BoxDecoration(
                                       borderRadius: BorderRadius.circular(10),
                                       color: CustomColors.warnaabu2),
                                   child: Center(
-                                    child: Text('${CustomStringText().Kembali}',
-                                        style: TextStyle(
+                                    child: Text(CustomStringText().Kembali,
+                                        style: const TextStyle(
                                             color: Colors.grey,
                                             fontWeight: FontWeight.bold)),
                                   ),
@@ -288,8 +291,7 @@ class _DetailPoliViewState extends State<DetailPoliView> {
                                     fit: BoxFit.fitHeight,
                                     height: 200,
                                   ),
-                                  Text(
-                                      '${CustomStringText().FOatauQRCode}',
+                                  Text(CustomStringText().FOatauQRCode,
                                       textAlign: TextAlign.center),
                                 ],
                               ),
@@ -300,11 +302,11 @@ class _DetailPoliViewState extends State<DetailPoliView> {
                                 },
                                 child: Container(
                                   width: double.infinity,
-                                  padding: EdgeInsets.all(10),
+                                  padding: const EdgeInsets.all(10),
                                   decoration: BoxDecoration(
                                       borderRadius: BorderRadius.circular(10),
                                       color: CustomColors.warnabiru),
-                                  child: Center(
+                                  child: const Center(
                                     child: Text('Lihat Antrean',
                                         style: TextStyle(
                                             color: CustomColors.warnaputih,
@@ -324,13 +326,13 @@ class _DetailPoliViewState extends State<DetailPoliView> {
                               },
                               child: Container(
                                 width: double.infinity,
-                                padding: EdgeInsets.all(10),
+                                padding: const EdgeInsets.all(10),
                                 decoration: BoxDecoration(
                                     borderRadius: BorderRadius.circular(10),
                                     color: CustomColors.warnaabu2),
                                 child: Center(
-                                  child: Text('${CustomStringText().Kembali}',
-                                      style: TextStyle(
+                                  child: Text(CustomStringText().Kembali,
+                                      style: const TextStyle(
                                           color: Colors.grey,
                                           fontWeight: FontWeight.bold)),
                                 ),
@@ -365,7 +367,7 @@ class _DetailPoliViewState extends State<DetailPoliView> {
                                   kodeDokter: controller.items.kodeDokter ?? '',
                                   kodeBagian: controller.items.kodeBagian ?? '',
                                   namaBagian: controller.items.namaBagian ?? '',
-                                  namaKlinik: '${CustomStringText().namaRS}',
+                                  namaKlinik: CustomStringText().namaRS,
                                   namaDokter:
                                       controller.items.namaPegawai ?? '',
                                   durasi: controller
@@ -376,21 +378,22 @@ class _DetailPoliViewState extends State<DetailPoliView> {
                                 );
                                 if (daftarPx.code.toString() == '500') {
                                   Get.defaultDialog(
-                                    title: '${CustomStringText().SudahTerdaftar}',
+                                    title: CustomStringText().SudahTerdaftar,
                                     cancel: InkWell(
                                       onTap: () async {
                                         Get.back();
                                       },
                                       child: Container(
                                         width: double.infinity,
-                                        padding: EdgeInsets.all(10),
+                                        padding: const EdgeInsets.all(10),
                                         decoration: BoxDecoration(
                                             borderRadius:
                                                 BorderRadius.circular(10),
                                             color: CustomColors.warnaabu2),
                                         child: Center(
-                                          child: Text('${CustomStringText().Kembali}',
-                                              style: TextStyle(
+                                          child: Text(
+                                              CustomStringText().Kembali,
+                                              style: const TextStyle(
                                                   color: Colors.grey,
                                                   fontWeight: FontWeight.bold)),
                                         ),
@@ -417,19 +420,19 @@ class _DetailPoliViewState extends State<DetailPoliView> {
                                 } else if (daftarPx.code.toString() == '200') {
                                   Get.back();
                                   Get.defaultDialog(
-                                    title: '${CustomStringText().janjiTemu}',
+                                    title: CustomStringText().janjiTemu,
                                     cancel: InkWell(
                                       onTap: () async {
                                         Get.back();
                                       },
                                       child: Container(
                                         width: double.infinity,
-                                        padding: EdgeInsets.all(10),
+                                        padding: const EdgeInsets.all(10),
                                         decoration: BoxDecoration(
                                             borderRadius:
                                                 BorderRadius.circular(10),
                                             color: CustomColors.warnaabu2),
-                                        child: Center(
+                                        child: const Center(
                                           child: Text('Kembali',
                                               style: TextStyle(
                                                   color: Colors.grey,
@@ -445,8 +448,7 @@ class _DetailPoliViewState extends State<DetailPoliView> {
                                           fit: BoxFit.fitHeight,
                                           height: 200,
                                         ),
-                                        Text(
-                                            '${CustomStringText().FOatauQRCode}',
+                                        Text(CustomStringText().FOatauQRCode,
                                             textAlign: TextAlign.center),
                                       ],
                                     ),
@@ -457,14 +459,15 @@ class _DetailPoliViewState extends State<DetailPoliView> {
                                       },
                                       child: Container(
                                         width: double.infinity,
-                                        padding: EdgeInsets.all(10),
+                                        padding: const EdgeInsets.all(10),
                                         decoration: BoxDecoration(
                                             borderRadius:
                                                 BorderRadius.circular(10),
                                             color: CustomColors.warnabiru),
                                         child: Center(
-                                          child: Text('${CustomStringText().LihatAntrean}',
-                                              style: TextStyle(
+                                          child: Text(
+                                              CustomStringText().LihatAntrean,
+                                              style: const TextStyle(
                                                   color:
                                                       CustomColors.warnaputih,
                                                   fontWeight: FontWeight.bold)),
@@ -476,13 +479,13 @@ class _DetailPoliViewState extends State<DetailPoliView> {
                               },
                               child: Container(
                                 width: double.infinity,
-                                padding: EdgeInsets.all(10),
+                                padding: const EdgeInsets.all(10),
                                 decoration: BoxDecoration(
                                     borderRadius: BorderRadius.circular(10),
                                     color: CustomColors.warnabiru),
                                 child: Center(
-                                  child: Text('${CustomStringText().Lanjut}',
-                                      style: TextStyle(
+                                  child: Text(CustomStringText().Lanjut,
+                                      style: const TextStyle(
                                           color: CustomColors.warnaputih,
                                           fontWeight: FontWeight.bold)),
                                 ),
@@ -498,14 +501,13 @@ class _DetailPoliViewState extends State<DetailPoliView> {
                       Get.dialog(
                         DialogGagalRegis(
                           daftarPx: DaftarPx(
-                            msg:
-                                '${CustomStringText().CariDokter}',
+                            msg: CustomStringText().CariDokter,
                           ),
                         ),
                       );
                     }
                   },
-                  child: Text('${CustomStringText().Lanjutkan}'),
+                  child: Text(CustomStringText().Lanjutkan),
                 ),
               ),
             ),
@@ -523,7 +525,7 @@ class _DetailPoliViewState extends State<DetailPoliView> {
   _onRefresh() {
     setState(() {
 // so whatever you want to refresh it must be inside the setState
-      DetailPoliView(); // if you only want to refresh the list you can place this, so the two can be inside setState
+      const DetailPoliView(); // if you only want to refresh the list you can place this, so the two can be inside setState
       _refreshController
           .refreshCompleted(); // request complete,the header will enter complete state,
 // resetFooterState : it will set the footer state from noData to idle

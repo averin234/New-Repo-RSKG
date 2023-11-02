@@ -48,7 +48,7 @@ class WidgetStraggeredGridView extends StatelessWidget {
                   height: 15,
                 ),
                 Text(
-                  "${CustomStringText().RegistrasiRS}",
+                  CustomStringText().RegistrasiRS,
                   textAlign: TextAlign.center,
                   style: GoogleFonts.nunito(
                     fontSize: MyFontSize.small3,
@@ -86,7 +86,7 @@ class WidgetStraggeredGridView extends StatelessWidget {
                   height: 15,
                 ),
                 Text(
-                  "${CustomStringText().RegistrasiHemodalisa}",
+                  CustomStringText().RegistrasiHemodalisa,
                   textAlign: TextAlign.center,
                   style: GoogleFonts.nunito(
                     fontSize: MyFontSize.small3,
@@ -124,7 +124,7 @@ class WidgetStraggeredGridView extends StatelessWidget {
                   height: 15,
                 ),
                 Text(
-                  "${CustomStringText().DaftarAntrean}",
+                  CustomStringText().DaftarAntrean,
                   textAlign: TextAlign.center,
                   style: GoogleFonts.nunito(
                     fontSize: MyFontSize.small3,
@@ -162,7 +162,7 @@ class WidgetStraggeredGridView extends StatelessWidget {
                   height: 15,
                 ),
                 Text(
-                  "${CustomStringText().RiwayatMedis}",
+                  CustomStringText().RiwayatMedis,
                   textAlign: TextAlign.center,
                   style: GoogleFonts.nunito(
                     fontSize: MyFontSize.small3,
@@ -200,7 +200,7 @@ class WidgetStraggeredGridView extends StatelessWidget {
                   height: 15,
                 ),
                 Text(
-                  "${CustomStringText().ProfilePasien1}",
+                  CustomStringText().ProfilePasien1,
                   textAlign: TextAlign.center,
                   style: GoogleFonts.nunito(
                     fontSize: MyFontSize.small3,
@@ -218,7 +218,7 @@ class WidgetStraggeredGridView extends StatelessWidget {
               showDragHandle: true,
               context: context,
               enableDrag: false,
-              shape: RoundedRectangleBorder(
+              shape: const RoundedRectangleBorder(
                 borderRadius: BorderRadius.vertical(
                   top: Radius.circular(20),
                 ),
@@ -250,7 +250,7 @@ class WidgetStraggeredGridView extends StatelessWidget {
                   height: 0,
                 ),
                 Text(
-                  "${CustomStringText().NamaRS2}",
+                  CustomStringText().NamaRS2,
                   textAlign: TextAlign.center,
                   style: GoogleFonts.nunito(
                     fontSize: MyFontSize.small3,
@@ -277,7 +277,7 @@ class WidgetStraggeredGridView extends StatelessWidget {
         ),
         child: Column(
           children: [
-            SizedBox(
+            const SizedBox(
               height: 10,
             ),
             SingleChildScrollView(

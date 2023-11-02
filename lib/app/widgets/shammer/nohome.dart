@@ -16,7 +16,7 @@ class nohome extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
-            shimmernohome(),
+            const shimmernohome(),
             Padding(
               padding: const EdgeInsets.only(left: 20, top: 15, bottom: 15),
               child: Text(
@@ -24,7 +24,7 @@ class nohome extends StatelessWidget {
                 style: MyStyle.textTitleBlack,
               ),
             ),
-            shimmerAntri(),
+            const shimmerAntri(),
             Padding(
               padding: const EdgeInsets.only(left: 20, top: 15, bottom: 15),
               child: Text(
@@ -32,7 +32,7 @@ class nohome extends StatelessWidget {
                 style: MyStyle.textTitleBlack,
               ),
             ),
-            ShimmerMenu(),
+            const ShimmerMenu(),
             Padding(
               padding: const EdgeInsets.only(left: 20, top: 15, bottom: 15),
               child: Text(
@@ -40,8 +40,8 @@ class nohome extends StatelessWidget {
                 style: MyStyle.textTitleBlack,
               ),
             ),
-            shimmerJadwal(),
-            SizedBox(
+            const shimmerJadwal(),
+            const SizedBox(
               height: 10,
             ),
           ]),

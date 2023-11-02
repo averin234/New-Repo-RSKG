@@ -18,8 +18,8 @@ void main() async {
   SystemChrome.setPreferredOrientations([
     DeviceOrientation.portraitUp,
   ]);
-  await GetStorage.init('token_rsbk');
-  await GetStorage.init('dataRegist_rsbk');
+  await GetStorage.init('token_rskg');
+  await GetStorage.init('dataRegist_rskg');
   DataPx cekData = await API.cekDataPx(
       noKtp: Publics.controller.getDataRegist.value.noKtp ?? '');
   runApp(MyApp(code: cekData.code ?? 500));
@@ -32,7 +32,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
-      title: '${CustomStringText().namaRS}',
+      title: CustomStringText().namaRS,
       theme: ThemeData(
         appBarTheme: const AppBarTheme(
           color: CustomColors.warnaputih,
@@ -54,7 +54,7 @@ class MyApp extends StatelessWidget {
 class AppTheme {
   static final lightTheme = ThemeData(
       brightness: Brightness.light,
-      appBarTheme: AppBarTheme(
+      appBarTheme: const AppBarTheme(
         color: CustomColors.warnaputih,
         foregroundColor: CustomColors.warnahitam,
         iconTheme: IconThemeData(color: CustomColors.warnahitam),
@@ -66,7 +66,7 @@ class AppTheme {
         primary: Colors.grey[900]!,
         secondary: Colors.grey[900]!,
       ),
-      appBarTheme: AppBarTheme(
+      appBarTheme: const AppBarTheme(
         backgroundColor: CustomColors.warnahitam,
         foregroundColor: CustomColors.warnaputih,
         iconTheme: IconThemeData(color: CustomColors.warnahitam),

@@ -53,7 +53,7 @@ class Headerlogin extends StatelessWidget {
                 animation: animation,
                 additionalOffset: 0.0,
                 child: Text(
-                  '${CustomStringText().namaRS}',
+                  CustomStringText().namaRS,
                   style: Theme.of(context).textTheme.headlineSmall!.copyWith(
                         color: kBlack,
                         fontWeight: FontWeight.bold,

@@ -220,7 +220,7 @@ class SettingProfileView extends GetView<SettingProfileController> {
                       ),
                       builder: (context) => ubahpassowrd(context: context),
                     ),
-                    child: Row(
+                    child: const Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Text(
@@ -258,7 +258,7 @@ class SettingProfileView extends GetView<SettingProfileController> {
                       ),
                       builder: (context) => InfoAplikasi(),
                     ),
-                    child: Row(
+                    child: const Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Text(
@@ -308,7 +308,7 @@ class SettingProfileView extends GetView<SettingProfileController> {
                     ),
                   ],
                 ),
-                child: Column(children: [
+                child: const Column(children: [
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
@@ -361,18 +361,18 @@ class SettingProfileView extends GetView<SettingProfileController> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Center(
-                      child: Text('Aplikasi Versi ' + controller.packageName),
+                      child: Text('Aplikasi Versi ${controller.packageName}'),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 20,
                     ),
                     Padding(
-                      padding: EdgeInsets.all(20),
+                      padding: const EdgeInsets.all(20),
                       child: Center(
                           child: Column(
                         children: [
-                          Text('Aplikasi masih pada tahap pengembangan'),
-                          Text('mohon maaf atas ketidak nyamanan '),
+                          const Text('Aplikasi masih pada tahap pengembangan'),
+                          const Text('mohon maaf atas ketidak nyamanan '),
                           Text('saat menggunakan aplikasi ${CustomStringText().namaRS}'),
                         ],
                       )),
@@ -432,7 +432,7 @@ class SettingProfileView extends GetView<SettingProfileController> {
                           textInputAction: TextInputAction.next,
                           controller: controller.pwlama,
                           decoration: InputDecoration(
-                              border: OutlineInputBorder(
+                              border: const OutlineInputBorder(
                                 borderRadius: BorderRadius.all(
                                   Radius.circular(10.0),
                                 ),
@@ -443,7 +443,7 @@ class SettingProfileView extends GetView<SettingProfileController> {
                               ),
                               fillColor: Theme.of(context).brightness ==
                                       Brightness.light
-                                  ? Color(0xffecf8ff)
+                                  ? const Color(0xffecf8ff)
                                   : CustomColors.darkmode2,
                               filled: true),
                         )
@@ -474,7 +474,7 @@ class SettingProfileView extends GetView<SettingProfileController> {
                           controller: controller.pwbaru,
                           textInputAction: TextInputAction.next,
                           decoration: InputDecoration(
-                              border: OutlineInputBorder(
+                              border: const OutlineInputBorder(
                                 borderRadius: BorderRadius.all(
                                   Radius.circular(10.0),
                                 ),
@@ -485,7 +485,7 @@ class SettingProfileView extends GetView<SettingProfileController> {
                               ),
                               fillColor: Theme.of(context).brightness ==
                                       Brightness.light
-                                  ? Color(0xffecf8ff)
+                                  ? const Color(0xffecf8ff)
                                   : CustomColors.darkmode2,
                               filled: true),
                         )
@@ -516,7 +516,7 @@ class SettingProfileView extends GetView<SettingProfileController> {
                           controller: controller.pwbaruconfirm,
                           textInputAction: TextInputAction.next,
                           decoration: InputDecoration(
-                              border: OutlineInputBorder(
+                              border: const OutlineInputBorder(
                                 borderRadius: BorderRadius.all(
                                   Radius.circular(10.0),
                                 ),
@@ -527,7 +527,7 @@ class SettingProfileView extends GetView<SettingProfileController> {
                               ),
                               fillColor: Theme.of(context).brightness ==
                                       Brightness.light
-                                  ? Color(0xffecf8ff)
+                                  ? const Color(0xffecf8ff)
                                   : CustomColors.darkmode2,
                               filled: true),
                         )
@@ -595,7 +595,7 @@ class SettingProfileView extends GetView<SettingProfileController> {
                     borderRadius: BorderRadius.circular(7),
                     color: CustomColors.warnabiru,
                   ),
-                  child: Column(
+                  child: const Column(
                     children: [
                       Padding(
                         padding: EdgeInsets.all(16),
@@ -660,7 +660,7 @@ class SettingProfileView extends GetView<SettingProfileController> {
                         borderRadius: BorderRadius.circular(7),
                         color: CustomColors.warnabiru,
                       ),
-                      child: Column(
+                      child: const Column(
                         children: [
                           Padding(
                             padding: EdgeInsets.all(16),
@@ -702,7 +702,7 @@ class SettingProfileView extends GetView<SettingProfileController> {
                             LocalStorages.getToken;
                         Get.offAllNamed(Routes.LOGIN);
                       },
-                      child: Column(
+                      child: const Column(
                         children: [
                           Padding(
                             padding: EdgeInsets.all(16),

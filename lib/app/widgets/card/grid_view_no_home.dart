@@ -48,7 +48,7 @@ class WidgetStraggeredGridView extends StatelessWidget {
                   height: 15,
                 ),
                 Text(
-                  "${CustomStringText().RegistrasiRS}",
+                  CustomStringText().RegistrasiRS,
                   textAlign: TextAlign.center,
                   style: GoogleFonts.nunito(
                     fontSize: MyFontSize.small3,
@@ -94,7 +94,7 @@ class WidgetStraggeredGridView extends StatelessWidget {
                   height: 15,
                 ),
                 Text(
-                  "${CustomStringText().RegistrasiHemodalisa}",
+                  CustomStringText().RegistrasiHemodalisa,
                   textAlign: TextAlign.center,
                   style: GoogleFonts.nunito(
                     fontSize: MyFontSize.small3,
@@ -140,7 +140,7 @@ class WidgetStraggeredGridView extends StatelessWidget {
                   height: 15,
                 ),
                 Text(
-                  "${CustomStringText().DaftarAntrean}",
+                  CustomStringText().DaftarAntrean,
                   textAlign: TextAlign.center,
                   style: GoogleFonts.nunito(
                     fontSize: MyFontSize.small3,
@@ -186,7 +186,7 @@ class WidgetStraggeredGridView extends StatelessWidget {
                   height: 15,
                 ),
                 Text(
-                  "${CustomStringText().RiwayatMedis}",
+                  CustomStringText().RiwayatMedis,
                   textAlign: TextAlign.center,
                   style: GoogleFonts.nunito(
                     fontSize: MyFontSize.small3,
@@ -232,7 +232,7 @@ class WidgetStraggeredGridView extends StatelessWidget {
                   height: 15,
                 ),
                 Text(
-                  "${CustomStringText().ProfilePasien1}",
+                  CustomStringText().ProfilePasien1,
                   textAlign: TextAlign.center,
                   style: GoogleFonts.nunito(
                     fontSize: MyFontSize.small3,
@@ -281,7 +281,7 @@ class WidgetStraggeredGridView extends StatelessWidget {
                   height: 15,
                 ),
                 Text(
-                  "${CustomStringText().NamaRS2}",
+                  CustomStringText().NamaRS2,
                   textAlign: TextAlign.center,
                   style: GoogleFonts.nunito(
                     fontSize: MyFontSize.small3,
@@ -314,14 +314,14 @@ class WidgetStraggeredGridView extends StatelessWidget {
                   Text(
                       "Anda Belum Terdaftar atau Login di Aplikasi ${CustomStringText().namaRS}",
                       style:
-                          TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                          const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
                       textAlign: TextAlign.center),
                   const SizedBox(
                     height: 5,
                   ),
                   Text(
                       " ${CustomStringText().registrasipoliklinik}",
-                      style: TextStyle(fontSize: 15),
+                      style: const TextStyle(fontSize: 15),
                       textAlign: TextAlign.center),
                   const SizedBox(
                     height: 20,
@@ -348,7 +348,7 @@ class WidgetStraggeredGridView extends StatelessWidget {
                               borderRadius: BorderRadius.circular(7),
                               color: Colors.greenAccent,
                             ),
-                            child: Column(
+                            child: const Column(
                               children: [
                                 Padding(
                                   padding: EdgeInsets.all(16),
@@ -372,7 +372,7 @@ class WidgetStraggeredGridView extends StatelessWidget {
                               borderRadius: BorderRadius.circular(7),
                               color: Colors.grey[100],
                             ),
-                            child: Column(
+                            child: const Column(
                               children: [
                                 Padding(
                                   padding: EdgeInsets.all(16),

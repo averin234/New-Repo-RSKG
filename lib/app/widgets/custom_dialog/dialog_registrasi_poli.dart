@@ -120,7 +120,7 @@ class DialogRegisPoli extends GetView<DetailPoliController> {
                             Get.dialog(const DialogSuksesRegis());
                           }
                         },
-                        child: Column(
+                        child: const Column(
                           children: [
                             Text(
                               "Lanjutkan",

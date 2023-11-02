@@ -9,6 +9,7 @@ class RegisterTelemedicController extends GetxController {
   //TODO: Implement RegisterTelemedicController
   final selectedValue = ''.obs;
   final namaDokterController = TextEditingController();
+  final noAntrianController = TextEditingController();
   final kodeDokterController = TextEditingController();
   final asuransiController = TextEditingController();
   final selectedPayment = 1.obs;

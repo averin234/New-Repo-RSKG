@@ -59,7 +59,7 @@ class DialogInginLogin extends StatelessWidget {
                       borderRadius: BorderRadius.circular(7),
                       color: CustomColors.warnabiru,
                     ),
-                    child: Column(
+                    child: const Column(
                       children: [
                         Text("Cancel",
                             style: TextStyle(
@@ -83,7 +83,7 @@ class DialogInginLogin extends StatelessWidget {
                       borderRadius: BorderRadius.circular(7),
                       color: Colors.greenAccent,
                     ),
-                    child: Column(
+                    child: const Column(
                       children: [
                         Text("Login / Regist",
                             style: TextStyle(

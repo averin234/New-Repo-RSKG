@@ -131,7 +131,7 @@ class AppTextField extends StatelessWidget {
           controller: textEditingController,
           cursorColor: CustomColors.warnahitam,
           onTap: onTextFieldTap,
-          style: TextStyle(color: CustomColors.warnahitam),
+          style: const TextStyle(color: CustomColors.warnahitam),
           decoration: InputDecoration(
             filled: true,
             fillColor: Theme.of(context).brightness == Brightness.light

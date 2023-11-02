@@ -26,7 +26,7 @@ class RiwayatMedisView extends StatefulWidget {
 class _RiwayatMedisViewState extends State<RiwayatMedisView> {
   // this enable our app to able to pull down
   late RefreshController _refreshController; // the refresh controller
-  var _scaffoldKey =
+  final _scaffoldKey =
       GlobalKey<ScaffoldState>(); // this is our key to the scaffold widget
   @override
   void initState() {
@@ -44,7 +44,7 @@ class _RiwayatMedisViewState extends State<RiwayatMedisView> {
         Navigator.of(context).pushReplacement(
           MaterialPageRoute(
               builder: (context) =>
-                  HomeView()), // Ganti dengan halaman home Anda
+                  const HomeView()), // Ganti dengan halaman home Anda
         );
         return true;
       },
@@ -53,7 +53,7 @@ class _RiwayatMedisViewState extends State<RiwayatMedisView> {
           child: SmartRefresher(
             controller: _refreshController,
             enablePullDown: true,
-            header: WaterDropHeader(),
+            header: const WaterDropHeader(),
             onLoading: _onLoading,
             onRefresh: _onRefresh,
             child: CustomScrollView(
@@ -116,7 +116,7 @@ class _RiwayatMedisViewState extends State<RiwayatMedisView> {
                                 height: 10,
                               ),
                               const WidgetTitleRiwayat3(),
-                              SizedBox(
+                              const SizedBox(
                                 height: 15,
                               ),
                               Obx(() {
@@ -150,11 +150,11 @@ class _RiwayatMedisViewState extends State<RiwayatMedisView> {
                                                               res: e),
                                                     )
                                                     .toList()
-                                                : [WidgetNoAntri()],
+                                                : [const WidgetNoAntri()],
                                           ),
                                         );
                                       } else {
-                                        return Column(
+                                        return const Column(
                                           children: [
                                             SizedBox(
                                               height: 10,
@@ -226,7 +226,7 @@ class _RiwayatMedisViewState extends State<RiwayatMedisView> {
   _onRefresh() {
     setState(() {
 // so whatever you want to refresh it must be inside the setState
-      RiwayatMedisView(); // if you only want to refresh the list you can place this, so the two can be inside setState
+      const RiwayatMedisView(); // if you only want to refresh the list you can place this, so the two can be inside setState
       _refreshController
           .refreshCompleted(); // request complete,the header will enter complete state,
 // resetFooterState : it will set the footer state from noData to idle

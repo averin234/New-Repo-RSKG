@@ -42,7 +42,7 @@ class JadwalPraktik extends StatelessWidget {
             ),
             Row(
               children: [
-                Icon(Icons.access_time_filled,
+                const Icon(Icons.access_time_filled,
                     color: CustomColors.warnabiru),
                 const SizedBox(
                   width: 10,
